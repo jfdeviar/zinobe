@@ -1,0 +1,14 @@
+{
+  "name": "zinobe",
+  "version": "1.0.0",
+  "description": "Zinobe Web package",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Fernando Devia",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.6.0"
+  }
+}
