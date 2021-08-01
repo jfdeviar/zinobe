@@ -309,3 +309,464 @@ request: api.deviafernando.com /auth/register params: array (
   'identification' => '222999123',
   'password' => '12356',
 )
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'password' => 'devia5',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'password' => 'devia5',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'password' => 'pt100UNAL--',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'password' => 'pt100UNAL--',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'password' => 'pt100UNAL--',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'password' => 'pt100UNAL--',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'password' => 'pt100UNAL--',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'password' => 'pt100UNAL--',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'password' => 'pt100UNAL--',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'password' => 'pt100UNAL--',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'password' => 'pt100UNAL--',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'password' => 'pt100UNAL--',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'password' => 'pt100UNAL--',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'password' => 'pt100UNAL--',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'password' => 'pt100UNAL--',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'password' => 'pt100UNAL--',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'password' => 'pt100UNAL--',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'password' => 'pt100UNAL--',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'password' => 'pt100UNAL--',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'password' => 'pt100UNAL--',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'password' => 'pt100UNAL--',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'password' => 'pt100UNAL--',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'password' => 'pt100UNAL--',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'password' => 'pt100UNAL--',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '828755',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '828755',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '828755',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '828755',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '828755',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '828755',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'password' => 'pt100UNAL',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '659987',
+  'password' => 'pt100UNAL',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '659987',
+  'password' => 'pt100UNAL',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '659987',
+  'password' => 'pt100UNAL',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '659987',
+  'password' => 'pt100UNAL',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '659987',
+  'password' => 'pt100UNAL',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '659987',
+  'password' => 'pt100UNAL',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '659987',
+  'password' => 'pt100UNAL',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '659987',
+  'password' => 'pt100UNAL',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '659987',
+  'password' => 'pt100UNAL',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '659987',
+  'password' => 'pt100UNAL',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '659987',
+  'password' => 'pt100UNAL',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '659987',
+  'password' => 'pt100UNAL',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '659987',
+  'password' => 'pt100UNAL',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '659987',
+  'password' => 'pt100UNAL',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '659987',
+  'password' => 'pt100UNAL',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '659987',
+  'password' => 'pt100UNAL',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '659987',
+  'password' => 'pt100UNAL',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '659987',
+  'password' => 'pt100UNAL',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '659987',
+  'password' => 'pt100UNAL',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '659987',
+  'password' => 'pt100UNAL',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '659987',
+  'password' => 'pt100UNAL',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '659987',
+  'password' => 'pt100UNAL',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '659987',
+  'password' => 'pt100UNAL',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '659987',
+  'password' => 'pt100UNAL',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '659987',
+  'password' => 'pt100UNAL',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '659987',
+  'password' => 'pt100UNAL',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '659987',
+  'password' => 'pt100UNAL',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '659987',
+  'password' => 'pt100UNAL',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '659987',
+  'password' => 'pt100UNAL',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '659987',
+  'password' => 'pt100UNAL',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '659987',
+  'password' => 'pt100UNAL',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '659987',
+  'password' => 'pt100UNAL',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '659987',
+  'password' => 'pt100UNAL',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '659987',
+  'password' => 'pt100UNAL',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '659987',
+  'password' => 'pt100UNAL',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '659987',
+  'password' => 'pt100UNAL',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '659987',
+  'password' => 'pt100UNAL',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '659987',
+  'password' => 'pt100UNAL',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '659987',
+  'password' => 'pt100UNAL',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '659987',
+  'password' => 'pt100UNAL',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '659987',
+  'password' => 'pt100UNAL',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '659987',
+  'password' => 'pt100UNAL',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '659987',
+  'password' => 'pt100UNAL',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '659987',
+  'password' => 'pt100UNAL',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '659987',
+  'password' => 'pt100UNAL',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '659987',
+  'password' => 'pt100UNAL',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '659987',
+  'password' => 'pt100UNAL',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '659987',
+  'password' => 'pt100UNAL',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '659987',
+  'password' => 'pt100UNAL',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '659987',
+  'password' => 'pt100UNAL',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '659987',
+  'password' => 'pt100UNAL',
+)

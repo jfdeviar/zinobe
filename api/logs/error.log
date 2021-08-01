@@ -1,25 +1,20 @@
-Error: 0: Cannot register two routes matching "/auth/" for method "POST" in D:\Desarrollo\fernando\zinobe\api\vendor\nikic\fast-route\src\DataGenerator\RegexBasedAbstract.php:86
-Error: 0: Cannot register two routes matching "/auth/" for method "POST" in D:\Desarrollo\fernando\zinobe\api\vendor\nikic\fast-route\src\DataGenerator\RegexBasedAbstract.php:86
-Error: 404: Not Found in D:\Desarrollo\fernando\zinobe\api\index.php:51
-Error: 42S02: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sys.tables' doesn't exist in D:\Desarrollo\fernando\zinobe\api\vendor\catfan\medoo\src\Medoo.php:563
-Error: 42S02: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sys.tables' doesn't exist in D:\Desarrollo\fernando\zinobe\api\vendor\catfan\medoo\src\Medoo.php:563
-Error: 42S02: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sys.tables' doesn't exist in D:\Desarrollo\fernando\zinobe\api\vendor\catfan\medoo\src\Medoo.php:563
-Error: 42S02: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sys.tables' doesn't exist in D:\Desarrollo\fernando\zinobe\api\vendor\catfan\medoo\src\Medoo.php:563
-Error: 404: Not Found in D:\Desarrollo\fernando\zinobe\api\index.php:52
-Error: 500: El usuario que ingresó, ya se encuentra registrado in D:\Desarrollo\fernando\zinobe\api\Modules\User\Controller\UserController.php:32
-Error: 500: El usuario que ingresó, ya se encuentra registrado in D:\Desarrollo\fernando\zinobe\api\Modules\User\Controller\UserController.php:32
-Error: 500: El usuario que ingresó, ya se encuentra registrado in D:\Desarrollo\fernando\zinobe\api\Modules\User\Controller\UserController.php:32
-Error: 500: El usuario que ingresó, ya se encuentra registrado in D:\Desarrollo\fernando\zinobe\api\Modules\User\Controller\UserController.php:32
-Error: 500: El usuario que ingresó, ya se encuentra registrado in D:\Desarrollo\fernando\zinobe\api\Modules\User\Controller\UserController.php:32
-Error: 500: El usuario que ingresó, ya se encuentra registrado in D:\Desarrollo\fernando\zinobe\api\Modules\User\Controller\UserController.php:32
-Error: 500: Error: 2: Undefined array key "identification" in D:\Desarrollo\fernando\zinobe\api\Modules\User\Model\User.php:38 in D:\Desarrollo\fernando\zinobe\api\Modules\Api\Controller\ApiController.php:51
-Error: 500: Error: 2: Undefined array key "identification" in D:\Desarrollo\fernando\zinobe\api\Modules\User\Model\User.php:38 in D:\Desarrollo\fernando\zinobe\api\Modules\Api\Controller\ApiController.php:51
-Error: 500: Error: 2: Undefined array key "identification" in D:\Desarrollo\fernando\zinobe\api\Modules\User\Model\User.php:38 in D:\Desarrollo\fernando\zinobe\api\Modules\Api\Controller\ApiController.php:51
-Error: 500: Error: 2: Undefined array key "identification" in D:\Desarrollo\fernando\zinobe\api\Modules\User\Model\User.php:38 in D:\Desarrollo\fernando\zinobe\api\Modules\Api\Controller\ApiController.php:51
-Error: 500: Error: 2: Undefined array key "identification" in D:\Desarrollo\fernando\zinobe\api\Modules\User\Model\User.php:38 in D:\Desarrollo\fernando\zinobe\api\Modules\Api\Controller\ApiController.php:51
-Error: 500: El usuario que ingresó, ya se encuentra registrado in D:\Desarrollo\fernando\zinobe\api\Modules\User\Controller\UserController.php:34
-Error: 500: El usuario que ingresó, ya se encuentra registrado in D:\Desarrollo\fernando\zinobe\api\Modules\User\Controller\UserController.php:34
-Error: 500: El usuario que ingresó, ya se encuentra registrado in D:\Desarrollo\fernando\zinobe\api\Modules\User\Controller\UserController.php:34
-Error: 500: El usuario que ingresó, ya se encuentra registrado in D:\Desarrollo\fernando\zinobe\api\Modules\User\Controller\UserController.php:34
-Error: 500: El usuario que ingresó, ya se encuentra registrado in D:\Desarrollo\fernando\zinobe\api\Modules\User\Controller\UserController.php:34
-Error: 500: El usuario que ingresó, ya se encuentra registrado in D:\Desarrollo\fernando\zinobe\api\Modules\User\Controller\UserController.php:34
+Register password: $2y$10$hlEPOAf42cij.deo4wQ2YeEEwXiPPvBr10QnkXr2ZIaYVDd4mczAy
+Error: 500: La contraseña no coincide in D:\Desarrollo\fernando\zinobe\api\Modules\User\Controller\UserController.php:74
+Register password: $2y$10$hlEPOAf42cij.deo4wQ2YeEEwXiPPvBr10QnkXr2ZIaYVDd4mczAy
+Error: 500: La contraseña no coincide in D:\Desarrollo\fernando\zinobe\api\Modules\User\Controller\UserController.php:74
+Register password: $2y$10$hlEPOAf42cij.deo4wQ2YeEEwXiPPvBr10QnkXr2ZIaYVDd4mczAy
+Error: 500: La contraseña no coincide in D:\Desarrollo\fernando\zinobe\api\Modules\User\Controller\UserController.php:73
+Register password: $2y$10$hlEPOAf42cij.deo4wQ2YeEEwXiPPvBr10QnkXr2ZIaYVDd4mczAy
+Error: 500: La contraseña no coincide in D:\Desarrollo\fernando\zinobe\api\Modules\User\Controller\UserController.php:73
+Error: 500: Error: 2: Undefined array key "Authorization" in D:\Desarrollo\fernando\zinobe\api\Modules\User\Boot\CheckLogin.php:11 in D:\Desarrollo\fernando\zinobe\api\Modules\Api\Controller\ApiController.php:64
+Error: 500: Error: 2: Undefined array key "Authorization" in D:\Desarrollo\fernando\zinobe\api\Modules\User\Boot\CheckLogin.php:11 in D:\Desarrollo\fernando\zinobe\api\Modules\Api\Controller\ApiController.php:64
+Error: 0: Wrong number of segments in D:\Desarrollo\fernando\zinobe\api\vendor\firebase\php-jwt\src\JWT.php:88
+Error: 500: Token de autorización invalido in D:\Desarrollo\fernando\zinobe\api\Modules\User\Boot\CheckLogin.php:20
+Error: 42S02: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'zinobe.tokens' doesn't exist in D:\Desarrollo\fernando\zinobe\api\vendor\catfan\medoo\src\Medoo.php:563
+Error: 42S02: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'zinobe.tokens' doesn't exist in D:\Desarrollo\fernando\zinobe\api\vendor\catfan\medoo\src\Medoo.php:563
+Error: 42S02: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'zinobe.tokens' doesn't exist in D:\Desarrollo\fernando\zinobe\api\vendor\catfan\medoo\src\Medoo.php:563
+Error: 42S02: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'zinobe.tokens' doesn't exist in D:\Desarrollo\fernando\zinobe\api\vendor\catfan\medoo\src\Medoo.php:563
+Error: 42S22: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'slug' in 'field list' in D:\Desarrollo\fernando\zinobe\api\vendor\catfan\medoo\src\Medoo.php:563
+Error: 42S22: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'slug' in 'field list' in D:\Desarrollo\fernando\zinobe\api\vendor\catfan\medoo\src\Medoo.php:563
+Error: 42S22: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'slug' in 'field list' in D:\Desarrollo\fernando\zinobe\api\vendor\catfan\medoo\src\Medoo.php:563
+Error: 42S22: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'slug' in 'field list' in D:\Desarrollo\fernando\zinobe\api\vendor\catfan\medoo\src\Medoo.php:563

@@ -18,12 +18,14 @@ class BaseModel
     protected String $created_at;
     protected String $updated_at;
 
+    protected bool $has_slug = true;
+
 
     public function __construct(array $properties=[]){
         foreach($properties as $key => $value){
             $method = 'set'.ucfirst($key);
             if(method_exists($this,$method)) {
-                $this->{$key} = $this->{$method}($value);
+                $this->{$method}($value);
                 continue;
             }
             $this->{$key} = $value;
@@ -35,7 +37,9 @@ class BaseModel
     }
 
     public function generateSlug($properties){
-        $this->slug = "";
+        if ($this->has_slug){
+            $this->slug = "";
+        }
     }
 
     /**
@@ -60,12 +64,17 @@ class BaseModel
     public function save(){
         $data = $this->filllData($this->getFill());
 
+
         if (!$this->id){
             $object = static::insert($data);
             $this->id = $object->id;
         } else {
-            static::update($data);
+            static::update(['id'=>$this->id],$data);
         }
+    }
+
+    public function remove(){
+        static::delete(['id'=>$this->id]);
     }
 
     /**
@@ -90,7 +99,7 @@ class BaseModel
      */
     public function getFill(): array
     {
-        return array_merge($this->fill,['slug']);
+        return array_merge($this->fill,$this->has_slug?['slug']:[]);
     }
 
 
@@ -116,7 +125,6 @@ class BaseModel
     {
         $filter['LIMIT'] = 1;
         $data = static::get($filter,$select);
-
         if (count($data)==0){
             return null;
         }
@@ -153,7 +161,13 @@ class BaseModel
             return null;
         }
 
-        Util::$database->insert(static::$table, $data);
+        try {
+            Util::$database->insert(static::$table, $data);
+        } catch (\Exception $e){
+            var_dump($e);
+            die;
+        }
+
 
         return static::first(['id'=>Util::$database->id()]);
     }
@@ -176,11 +190,16 @@ class BaseModel
      */
     public static function update(array $filter,array $data=[])
     {
-        $object = new static();
         Util::$database->update(static::$table, $data, $filter);
 
     }
 
-
+    /**
+     * @param array $filter
+     */
+    public static function delete(array $filter)
+    {
+        Util::$database->delete(static::$table, $filter);
+    }
 
 }

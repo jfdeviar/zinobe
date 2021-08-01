@@ -15,7 +15,8 @@ try {
     $boots = [
         '\Modules\Api\Boot\LoadConfig',
         '\Modules\Api\Boot\ConnectDatabase',
-        '\Modules\Api\Boot\RegisterLog'
+        '\Modules\Api\Boot\RegisterLog',
+        '\Modules\User\Boot\CheckLogin',
     ];
     foreach ($boots as &$boot){
         $boot = new $boot();
@@ -29,6 +30,7 @@ try {
             $r->addRoute('POST', '/', '\Modules\User\Controller\UserController.getLogin');
             $r->addRoute('GET', '/', '\Modules\User\Controller\UserController.doLogin');
             $r->addRoute('POST', '/register', '\Modules\User\Controller\UserController.doRegister');
+            $r->addRoute('POST', '/confirm', '\Modules\User\Controller\UserController.doConfirm');
         });
 
 
