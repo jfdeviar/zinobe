@@ -36,7 +36,7 @@ class UserController extends BaseController
 
 
 
-        $user = User::create([
+        $user = new User([
             'phone' => $phone,
             'identification' => $identification,
             'password' => $password

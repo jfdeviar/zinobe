@@ -28,6 +28,9 @@ class ConnectDatabase extends BaseBoot
             Util::$database->count('users');
         } catch (Exception $e){
             //Execute raw sql file
+            $content = file_get_contents('generator/database.base');
+            Util::$database->query($content);
+            //throw new Exception("No esta configurada la base de datos",500);
         }
 
     }
