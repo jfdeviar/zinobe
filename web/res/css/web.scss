@@ -1,0 +1,248 @@
+//Variables
+
+$primary: #2C74A4;
+$error: #E84C3D;
+$soft-gray: #ddd;
+$text-color: #515C7B;
+$background: #F5F5F5;
+$box-background: #ffffff;
+
+$border-radius: 5px;
+$box-padding: 22px;
+$box-small-padding: 10px;
+
+$animation-duration: 400ms;
+
+//General Items
+
+a, a:hover, a:visited {
+  color: $primary;
+  text-decoration: none;
+}
+
+h1, h2, h3 {
+  color: $primary;
+  margin: 0;
+  padding: 0;
+  font-weight: 600;
+}
+
+p {
+  color: $text-color;
+  margin: 0;
+  padding: 0;
+  font-weight: 300;
+}
+
+h1 {
+  font-size: 19px;
+}
+
+h2 {
+  font-size: 17px;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.box {
+  @extend .border-radius;
+  padding: $box-padding;
+}
+
+.box-small {
+  @extend .border-radius;
+  padding: $box-small-padding;
+}
+
+.border-radius {
+  -webkit-border-radius: $border-radius;
+  -moz-border-radius: $border-radius;
+  border-radius: $border-radius
+}
+
+* {
+  box-sizing: border-box;
+  animation-duration: $animation-duration;
+}
+
+html, body {
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 1px;
+  font-weight: 400;
+  font-size: 15px;
+  margin: 0;
+  padding: 0;
+  color: #444;
+}
+
+body {
+  min-height: 100vh;
+  background-color: $background;
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+}
+
+form {
+  padding: 10px 0;
+  text-align: left;
+  input,label {
+    display: inline-block;
+    width: 100%;
+    font-size: 15px;
+  }
+
+  label {
+    margin-bottom: 5px;
+    color: #5e5873;
+  }
+
+  input {
+    @extend .border-radius;
+    transition: border $animation-duration;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid $soft-gray;
+    box-shadow: none;
+    margin-bottom: 10px;
+    outline: none;
+    line-height: 150%;
+    &:focus {
+      border: 1px solid $primary;
+    }
+  }
+
+  .actions {
+    text-align: center;
+  }
+
+}
+
+button {
+  display: inline-block;
+  font-weight: 400;
+  background: $primary;
+  box-shadow: none;
+  border: 0;
+  @extend .border-radius;
+  margin: 5px auto;
+  padding: 10px 15px;
+  color: #fff;
+  &.block {
+    display: block;
+    width: 100%;
+  }
+  &.default {
+    background: $box-background;
+    border: 1px solid $primary;
+  }
+}
+
+
+//Regular CSS
+
+.full-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  .main-content {
+    width: 100%;
+    max-width: 450px;
+    .content-wrapper {
+      background: $box-background;
+      h1 {
+        text-transform: uppercase;
+      }
+    }
+    .bar-wrapper {
+      background: $box-background;
+      margin-bottom: 20px;
+      a {
+        display: inline-block;
+        margin-right: 10px;
+        &.active {
+          background: $primary;
+          color: #ffffff;
+          padding: 5px 10px;
+          @extend .border-radius
+        }
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+#app {
+
+}
+
+#loading-bar {
+  position: fixed;
+  top: 0;
+  height: 5px;
+  left: 0;
+  width: 0;
+  background: $primary;
+  opacity: 1;
+  animation: startLoading $animation-duration;
+  animation-fill-mode: forwards;
+  &.completed {
+    animation: endLoading $animation-duration;
+  }
+}
+
+#notifications {
+  position: fixed;
+  width: 350px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  i {
+    margin-right: 5px;
+  }
+
+  .notification {
+    padding: 15px;
+    background: $primary;
+    margin-bottom: 12px;
+
+    &.notification_error {
+      background: $error;
+    }
+
+    h3 {
+      margin-bottom: 5px;
+    }
+
+    p, h3 {
+      color: #fff;
+    }
+  }
+}
+
+
+//Animation
+@keyframes startLoading {
+  0% { width: 0 }
+  100% { width: 80% }
+}
+
+@keyframes endLoading {
+  0% { width: 80% }
+  50% { width: 100% }
+  100% { opacity: 0 }
+}
+
+
+//Responsive
+

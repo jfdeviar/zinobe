@@ -1,10 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+<div class="full-screen" id="loginPage">
+    <div class="main-content text-center">
+        <div class="bar-wrapper box-small">
+            <a href="/#/login" class="active">Ingresar</a>
+            <a href="/#/register">Registrarse</a>
+        </div>
+        <div class="content-wrapper box">
+            <h1>Ingresar</h1>
+            <form id="login-form">
+                <label for="identification">Teléfono</label>
+                <input name="identification" id="identification" placeholder="Teléfono" required/>
+                <label for="password">Contraseña</label>
+                <input name="password" id="password" placeholder="Contraseña" required />
+                <div class="actions">
+                    <button class="block" type="submit">Entrar</button>
+                </div>
+                <div class="actions">
+                    <a href="/#/recover">Recuperar contraseña</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $( document ).ready(function() {
+        $("#login-form").submit(function(e){
+            e.preventDefault();
+        });
+    })
+</script>

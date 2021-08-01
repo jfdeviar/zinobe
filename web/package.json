@@ -1,14 +1,11 @@
 {
   "name": "zinobe",
   "version": "1.0.0",
-  "description": "Zinobe Web package",
-  "main": "index.js",
+  "description": "zinobe test by fernando devia",
+  "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch-css": "nodemon -e scss -X \"npm run build-css\""
   },
-  "author": "Fernando Devia",
-  "license": "ISC",
-  "dependencies": {
-    "jquery": "^3.6.0"
-  }
+  "author": "fernandodevia",
+  "license": "ISC"
 }

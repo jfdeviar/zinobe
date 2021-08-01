@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Fernando Devia">
+    <meta name="description" content="Prueba Zinobe" />
+
+    <title>Prueba de Fernando Devia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="res/css/web.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="app"></div>
+    <div id="loading-bar"></div>
+    <div id="notifications"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        const BASE_URL = "http://api.deviafernando.com/"
+        const CRUD = {
+            read:(url)=>{},
+            create:(url,data,callback)=>{},
+            update:(url)=>{},
+            delete:(url)=>{}
+        };
+
+        const NOTIFY = {
+            generate: (notification,title,time)=>{},
+            index: 0
+        }
+
+        $( document ).ready(function() {
+            let currentPage = ""
+
+            $.ajaxSetup({
+                beforeSend: function(xhr) {
+                    //Add header
+                    $("#loading-bar").removeClass('completed')
+                },
+                complete: function (response){
+                    $("#loading-bar").addClass('completed')
+
+                    if(!response.responseJSON){
+                        return;
+                    }
+
+                    if (response.responseJSON && response.responseJSON.message){
+                        NOTIFY.generate(response.responseJSON.message,response.responseJSON.status?'primary':'error')
+                    }
+
+                }
+            });
+
+
+            NOTIFY.generate = (notification,type,title,time) => {
+                if(!time){
+                    time = 3200
+                }
+                if(!title){
+                    title = "Atención"
+                }
+                if(!type){
+                    type = "primary" //primary,error
+                }
+
+                $("#notifications").append('<div id="notification_'+NOTIFY.index+'" class="notification animate__animated animate__fadeInUp notification_'+type+'"><h3><i class="fas fa-exclamation-triangle"></i>'+title+'</h3><p>'+notification+'</p></div>')
+
+                const index = NOTIFY.index;
+                setTimeout(() => {
+                    const element = $('#notification_'+index)
+                    element.removeClass("animate__fadeInUp")
+                    element.addClass("animate__fadeOutDown")
+                    setTimeout(()=>{
+                        element.remove()
+                    },500)
+                }, time);
+
+                NOTIFY.index++;
+            }
+
+            CRUD.create = (url,data,callback) => {
+                $.ajax({
+                    type: "POST",
+                    url: BASE_URL+url,
+                    data: data,
+                    success: (response)=>{
+                        if (response.status===true){
+                            callback(response)
+                        } else {
+                            NOTIFY.generate(response.message,'error')
+                        }
+                    },
+                    dataType: "json"
+                });
+            }
+
+
+            function isLogged(){
+                return false;
+            }
+
+            function navigate(path){
+                window.location.hash = path;
+            }
+
+            function loadPage(name){
+                if (currentPage===name){
+                    return;
+                }
+                const pageId = 'app_'+name;
+                const app = $( "#app" );
+                const currentContents = $( "#app .content-wrapper" )
+
+                app.append('<div class="content-wrapper" id="'+pageId+'"></div>')
+                $( "#app #"+pageId ).load( "pages/"+name+".html", function() {
+
+                });
+            }
+
+            function processRoute(path){
+                let hash = path.substring(1);
+                switch (hash) {
+                    case "/":
+                        let redirect = "/login"
+                        if (isLogged()){
+                            let redirect = "/dashboard"
+                        }
+                        navigate(redirect)
+                        break
+                    case "/login":
+                        if (isLogged()){
+                            navigate("/dashboard")
+                            break
+                        }
+                        loadPage("login")
+                        break
+                    case "/register":
+                        if (isLogged()){
+                            navigate("/dashboard")
+                            break
+                        }
+                        loadPage("register")
+                        break
+                    default:
+                        //404
+                        loadPage("404")
+                        break
+                }
+            }
+
+
+            $(window).on('hashchange', function() {
+                processRoute(window.location.hash || "#/")
+            });
+
+            function boot(){
+                processRoute(window.location.hash || "#/")
+                $("#loading-bar").addClass('completed')
+            }
+
+            boot();
+
+
+        });
+    </script>
+
+</body>
+</html>
