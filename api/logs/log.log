@@ -1,0 +1,311 @@
+request: api.deviafernando.com / params: array (
+)
+request: api.deviafernando.com /register params: array (
+  'path' => 'register',
+)
+request: api.deviafernando.com /register params: array (
+  'path' => 'register',
+)
+request: api.deviafernando.com /register params: array (
+  'path' => 'register',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'path' => 'auth/register',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'path' => 'auth/register',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'path' => 'auth/register',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'path' => 'auth/register',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'path' => 'auth/register',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'path' => 'auth/register',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'path' => 'auth/register',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'password' => 'devia5',
+)
+request: api.deviafernando.com / params: array (
+)
+request: api.deviafernando.com / params: array (
+)
+request: api.deviafernando.com / params: array (
+)
+request: api.deviafernando.com / params: array (
+)
+request: api.deviafernando.com / params: array (
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'password' => 'devia5',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'password' => 'devia5',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'password' => 'devia5',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'password' => 'devia5',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'password' => 'devia5',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'password' => 'devia5',
+)
+request: api.deviafernando.com / params: array (
+)
+request: api.deviafernando.com / params: array (
+)
+request: api.deviafernando.com /favicon.ico params: array (
+  'path' => 'favicon.ico',
+)
+request: api.deviafernando.com / params: array (
+)
+request: api.deviafernando.com / params: array (
+)
+request: api.deviafernando.com / params: array (
+)
+request: api.deviafernando.com / params: array (
+)
+request: api.deviafernando.com / params: array (
+)
+request: api.deviafernando.com / params: array (
+)
+request: api.deviafernando.com / params: array (
+)
+request: api.deviafernando.com / params: array (
+)
+request: api.deviafernando.com / params: array (
+)
+request: api.deviafernando.com / params: array (
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241384',
+  'identification' => '1110534050',
+  'password' => 'devia5',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241384',
+  'identification' => '1110534051',
+  'password' => 'devia5',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241384',
+  'identification' => '1110534050',
+  'password' => 'devia5',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241384',
+  'identification' => '1110534050',
+  'password' => 'devia5',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'password' => 'devia5',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'password' => '1234',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'password' => '1234',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'password' => '1234',
+)
+request: api.deviafernando.com / params: array (
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241382',
+  'identification' => '1110534051',
+  'password' => '1234',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241382',
+  'identification' => '1110534051',
+  'password' => '1234',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241382',
+  'identification' => '1110534051',
+  'password' => '1234',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241382',
+  'identification' => '1110534051',
+  'password' => '1234',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241382',
+  'identification' => '1110534051',
+  'password' => '1234',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241382',
+  'identification' => '1110534051',
+  'password' => '1234',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241382',
+  'identification' => '1110534051',
+  'password' => '1234',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241382',
+  'identification' => '1110534051',
+  'password' => '1234',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241382',
+  'identification' => '1110534051',
+  'password' => '1234',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241382',
+  'identification' => '1110534051',
+  'password' => '1234',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241382',
+  'identification' => '1110534051',
+  'password' => '1234',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241382',
+  'identification' => '1110534051',
+  'password' => '1234',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241382',
+  'identification' => '1110534051',
+  'password' => '1234',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241382',
+  'identification' => '1110534051',
+  'password' => '1234',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241382',
+  'identification' => '1110534051',
+  'password' => '1234',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241382',
+  'identification' => '1110534051',
+  'password' => '1234',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241382',
+  'identification' => '1110534051',
+  'password' => '1234',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241382',
+  'identification' => '1110534051',
+  'password' => '1234',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241382',
+  'identification' => '1110534051',
+  'password' => '1234',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241382',
+  'identification' => '1110534051',
+  'password' => '1234',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241382',
+  'identification' => '1110534051',
+  'password' => '1234',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241382',
+  'identification' => '1110534051',
+  'password' => '1234',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241382',
+  'identification' => '1110534051',
+  'password' => '1234',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241382',
+  'identification' => '1110534051',
+  'password' => '1234',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241382',
+  'identification' => '1110534051',
+  'password' => '1234',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241382',
+  'identification' => '1110534051',
+  'password' => '1234',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'password' => 'pt100UNAL--',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'password' => 'pt100UNAL--',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'password' => 'pt100UNAL--',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'password' => 'pt100UNAL--',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241382',
+  'identification' => '222999123',
+  'password' => '12356',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241382',
+  'identification' => '222999123',
+  'password' => '12356',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241381',
+  'identification' => '222999123',
+  'password' => '12356',
+)

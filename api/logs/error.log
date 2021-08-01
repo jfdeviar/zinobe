@@ -1,0 +1,25 @@
+Error: 0: Cannot register two routes matching "/auth/" for method "POST" in D:\Desarrollo\fernando\zinobe\api\vendor\nikic\fast-route\src\DataGenerator\RegexBasedAbstract.php:86
+Error: 0: Cannot register two routes matching "/auth/" for method "POST" in D:\Desarrollo\fernando\zinobe\api\vendor\nikic\fast-route\src\DataGenerator\RegexBasedAbstract.php:86
+Error: 404: Not Found in D:\Desarrollo\fernando\zinobe\api\index.php:51
+Error: 42S02: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sys.tables' doesn't exist in D:\Desarrollo\fernando\zinobe\api\vendor\catfan\medoo\src\Medoo.php:563
+Error: 42S02: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sys.tables' doesn't exist in D:\Desarrollo\fernando\zinobe\api\vendor\catfan\medoo\src\Medoo.php:563
+Error: 42S02: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sys.tables' doesn't exist in D:\Desarrollo\fernando\zinobe\api\vendor\catfan\medoo\src\Medoo.php:563
+Error: 42S02: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sys.tables' doesn't exist in D:\Desarrollo\fernando\zinobe\api\vendor\catfan\medoo\src\Medoo.php:563
+Error: 404: Not Found in D:\Desarrollo\fernando\zinobe\api\index.php:52
+Error: 500: El usuario que ingresó, ya se encuentra registrado in D:\Desarrollo\fernando\zinobe\api\Modules\User\Controller\UserController.php:32
+Error: 500: El usuario que ingresó, ya se encuentra registrado in D:\Desarrollo\fernando\zinobe\api\Modules\User\Controller\UserController.php:32
+Error: 500: El usuario que ingresó, ya se encuentra registrado in D:\Desarrollo\fernando\zinobe\api\Modules\User\Controller\UserController.php:32
+Error: 500: El usuario que ingresó, ya se encuentra registrado in D:\Desarrollo\fernando\zinobe\api\Modules\User\Controller\UserController.php:32
+Error: 500: El usuario que ingresó, ya se encuentra registrado in D:\Desarrollo\fernando\zinobe\api\Modules\User\Controller\UserController.php:32
+Error: 500: El usuario que ingresó, ya se encuentra registrado in D:\Desarrollo\fernando\zinobe\api\Modules\User\Controller\UserController.php:32
+Error: 500: Error: 2: Undefined array key "identification" in D:\Desarrollo\fernando\zinobe\api\Modules\User\Model\User.php:38 in D:\Desarrollo\fernando\zinobe\api\Modules\Api\Controller\ApiController.php:51
+Error: 500: Error: 2: Undefined array key "identification" in D:\Desarrollo\fernando\zinobe\api\Modules\User\Model\User.php:38 in D:\Desarrollo\fernando\zinobe\api\Modules\Api\Controller\ApiController.php:51
+Error: 500: Error: 2: Undefined array key "identification" in D:\Desarrollo\fernando\zinobe\api\Modules\User\Model\User.php:38 in D:\Desarrollo\fernando\zinobe\api\Modules\Api\Controller\ApiController.php:51
+Error: 500: Error: 2: Undefined array key "identification" in D:\Desarrollo\fernando\zinobe\api\Modules\User\Model\User.php:38 in D:\Desarrollo\fernando\zinobe\api\Modules\Api\Controller\ApiController.php:51
+Error: 500: Error: 2: Undefined array key "identification" in D:\Desarrollo\fernando\zinobe\api\Modules\User\Model\User.php:38 in D:\Desarrollo\fernando\zinobe\api\Modules\Api\Controller\ApiController.php:51
+Error: 500: El usuario que ingresó, ya se encuentra registrado in D:\Desarrollo\fernando\zinobe\api\Modules\User\Controller\UserController.php:34
+Error: 500: El usuario que ingresó, ya se encuentra registrado in D:\Desarrollo\fernando\zinobe\api\Modules\User\Controller\UserController.php:34
+Error: 500: El usuario que ingresó, ya se encuentra registrado in D:\Desarrollo\fernando\zinobe\api\Modules\User\Controller\UserController.php:34
+Error: 500: El usuario que ingresó, ya se encuentra registrado in D:\Desarrollo\fernando\zinobe\api\Modules\User\Controller\UserController.php:34
+Error: 500: El usuario que ingresó, ya se encuentra registrado in D:\Desarrollo\fernando\zinobe\api\Modules\User\Controller\UserController.php:34
+Error: 500: El usuario que ingresó, ya se encuentra registrado in D:\Desarrollo\fernando\zinobe\api\Modules\User\Controller\UserController.php:34

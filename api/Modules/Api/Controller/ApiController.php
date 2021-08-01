@@ -2,9 +2,11 @@
 
 namespace Modules\Api\Controller;
 
+use Core\BaseController;
 use Exception;
+use Modules\User\Model\User;
 
-final class ApiController
+final class ApiController extends BaseController
 {
 
     /**

@@ -4,7 +4,10 @@
 namespace Core;
 
 
-class BaseBoot
+class BaseController
 {
+    protected array $params;
+
     use ConstructParams;
+
 }
