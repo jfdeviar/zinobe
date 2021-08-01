@@ -68,7 +68,10 @@ h3 {
 
 * {
   box-sizing: border-box;
-  animation-duration: $animation-duration;
+}
+
+:root {
+  --animate-duration: 400ms;
 }
 
 html, body {
@@ -143,8 +146,13 @@ button {
   }
 }
 
-
 //Regular CSS
+.app-content-wrapper {
+  display: none;
+  &.animate__animated {
+    display: block;
+  }
+}
 
 .full-screen {
   display: flex;
@@ -180,8 +188,29 @@ button {
   }
 }
 
-#app {
+#loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 300;
+  background: rgba(51, 51, 51, 0.6);
+  color: #fff;
+  &.completed {
+    display: none;
+  }
+}
 
+#notfound {
+  h1 {
+    font-size: 30px;
+  }
+}
+
+#app {
+  height: 100vh;
+  overflow: hidden;
 }
 
 #loading-bar {

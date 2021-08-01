@@ -20,10 +20,12 @@
 
     <div id="app"></div>
     <div id="loading-bar"></div>
+    <div id="loading" class="completed"><i class="fas fa-sync fa-spin"></i></div>
     <div id="notifications"></div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript">
+        const IS_LOADING = true
         const BASE_URL = "http://api.deviafernando.com/"
         const CRUD = {
             read:(url)=>{},
@@ -117,10 +119,23 @@
                 }
                 const pageId = 'app_'+name;
                 const app = $( "#app" );
-                const currentContents = $( "#app .content-wrapper" )
+                const currentContents = $( "#app .app-content-wrapper" )
 
-                app.append('<div class="content-wrapper" id="'+pageId+'"></div>')
+                app.append('<div class="app-content-wrapper" id="'+pageId+'"></div>')
                 $( "#app #"+pageId ).load( "pages/"+name+".html", function() {
+                    currentContents.addClass('animate__animated animate__backOutLeft')
+
+                    if (currentContents.length>0){
+                        setTimeout(() => {
+                            currentContents.remove()
+                            $(this).addClass('animate__animated animate__backInRight')
+                        }, 400);
+
+
+                    } else {
+                        $(this).addClass('animate__animated animate__backInRight')
+                    }
+
 
                 });
             }
@@ -149,8 +164,14 @@
                         }
                         loadPage("register")
                         break
+                    case "/recover":
+                        if (isLogged()){
+                            navigate("/dashboard")
+                            break
+                        }
+                        loadPage("recover")
+                        break
                     default:
-                        //404
                         loadPage("404")
                         break
                 }
