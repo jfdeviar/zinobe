@@ -24,8 +24,8 @@
             </div>
             <div class="form-step step2 toggle-box">
                 <form id="confirm-form">
-                    <label for="phone">Código de confirmación <span class="sent_number"></span></label>
-                    <input name="phone" id="code" placeholder="Código" required/>
+                    <label for="code">Código de confirmación <span class="sent_number"></span></label>
+                    <input name="code" id="code" placeholder="Código" required/>
                     <div class="actions">
                         <button class="block" type="submit">Confirmar</button>
                     </div>
@@ -46,7 +46,7 @@
             $(".form-step.step"+step).addClass('active')
         }
 
-        function completedRegister(response){
+        function completedRegister(){
             window.location.hash = "/dashboard"
         }
 
@@ -57,7 +57,7 @@
             changeStep()
         }
 
-        function resetRegister(response){
+        function resetRegister(){
             step = 1
             changeStep()
         }

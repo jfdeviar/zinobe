@@ -6,31 +6,77 @@
         </div>
         <div class="content-wrapper box">
             <h1>Recuperar</h1>
-            <form id="register-form">
-                <label for="phone">Teléfono</label>
-                <input name="phone" id="phone" placeholder="Teléfono" required/>
-                <div class="actions">
-                    <button class="block" type="submit">Recuperar</button>
-                </div>
-            </form>
+            <div class="form-step step1 toggle-box active">
+                <form id="recover-form">
+                    <label for="phone">Teléfono</label>
+                    <input name="phone" id="phone" placeholder="Teléfono" required/>
+                    <div class="actions">
+                        <button class="block" type="submit">Recuperar</button>
+                    </div>
+                </form>
+            </div>
+            <div class="form-step step2 toggle-box">
+                <form id="reset-form">
+                    <label for="phone">Código de confirmación <span class="sent_number"></span></label>
+                    <input name="code" id="code" placeholder="Código" required/>
+                    <label for="password">Nueva contraseña</label>
+                    <input name="password" id="password" type="password" placeholder="Contraseña" required/>
+                    <div class="actions">
+                        <button class="block" type="submit">Confirmar</button>
+                    </div>
+                    <div class="actions">
+                        <a class="reset-recover">Volver</a>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>
 <script type="text/javascript">
     $( document ).ready(function() {
 
-        function completedRegister(response){
-            console.log(response)
+        let step = 1;
+
+        function changeStep(){
+            $(".form-step").removeClass('active')
+            $(".form-step.step"+step).addClass('active')
         }
 
-        $("#register-form").submit(function(e){
+        function completedReset(){
+            window.location.hash = "/dashboard"
+        }
+
+        function completedRecover(){
+            $("sent_number").text('+57'+$("#phone").val())
+            step = 2
+            changeStep()
+        }
+
+        function resetRecover(){
+            step = 1
+            changeStep()
+        }
+
+        $("#recover-form").submit(function(e){
             e.preventDefault();
 
-            CRUD.create('auth/register',{
+            CRUD.create('auth/recover',{
                 phone: $("#phone").val(),
-                identification: $("#identification").val(),
-                password: $("#password").val(),
-            },completedRegister)
+            },completedRecover)
         });
+
+        $("#reset-form").submit(function(e){
+            e.preventDefault();
+
+            CRUD.create('auth/reset',{
+                code: $("#code").val(),
+                phone: $("#phone").val(),
+                password: $("#password").val()
+            },completedReset)
+        });
+
+        $(".reset-recover").click(()=>{
+            resetRecover()
+        })
     })
 </script>
