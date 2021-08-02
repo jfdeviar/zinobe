@@ -1,6 +1,11 @@
 a, a:hover, a:visited {
   color: #2C74A4;
   text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover {
+  color: #58A0D1;
 }
 
 h1, h2, h3 {
@@ -29,6 +34,10 @@ h3 {
   font-size: 16px;
 }
 
+.text-right {
+  text-align: right;
+}
+
 .text-center {
   text-align: center;
 }
@@ -37,11 +46,15 @@ h3 {
   padding: 22px;
 }
 
+.box-background {
+  background: #ffffff;
+}
+
 .box-small {
   padding: 10px;
 }
 
-.border-radius, .full-screen .main-content .bar-wrapper a.active, button, form input, .box, .box-small {
+.border-radius, .full-screen .main-content .bar-wrapper a.active, a.btn, button, form input, .box, .box-small {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
@@ -70,6 +83,13 @@ body {
   background-color: #F5F5F5;
   background-repeat: no-repeat;
   background-position: 100% 100%;
+}
+
+.toggle-box {
+  display: none;
+}
+.toggle-box.active {
+  display: block;
 }
 
 form {
@@ -102,8 +122,9 @@ form .actions {
   text-align: center;
 }
 
-button {
+a.btn, button {
   display: inline-block;
+  cursor: pointer;
   font-weight: 400;
   background: #2C74A4;
   box-shadow: none;
@@ -112,13 +133,32 @@ button {
   padding: 10px 15px;
   color: #fff;
 }
-button.block {
+a.btn.block, button.block {
   display: block;
   width: 100%;
 }
-button.default {
+a.btn.danger, button.danger {
+  background: #E84C3D;
+}
+a.btn.default, button.default {
   background: #ffffff;
   border: 1px solid #2C74A4;
+  color: #2C74A4;
+}
+
+.main-table .record {
+  display: flex;
+  align-items: center;
+}
+.main-table .record-value {
+  flex-grow: 1;
+}
+.main-table .record-value span {
+  font-size: 12px;
+  display: block;
+}
+.main-table .record-value:last-child {
+  text-align: right;
 }
 
 .app-content-wrapper {
@@ -126,6 +166,16 @@ button.default {
 }
 .app-content-wrapper.animate__animated {
   display: block;
+}
+
+.main-layout {
+  padding-left: 300px;
+  padding-top: 100px;
+  padding-right: 25px;
+  z-index: 50;
+}
+.main-layout h1 {
+  margin-bottom: 7px;
 }
 
 .full-screen {
@@ -161,18 +211,46 @@ button.default {
   margin-right: 0;
 }
 
-#loading {
+#menu {
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 25px;
+  left: 25px;
+  max-width: 250px;
   width: 100%;
-  height: 100%;
-  z-index: 300;
-  background: rgba(51, 51, 51, 0.6);
-  color: #fff;
+  z-index: 110;
 }
-#loading.completed {
-  display: none;
+#menu a {
+  display: block;
+  line-height: 40px;
+  border-bottom: 1px solid #2C74A4;
+  transition: all 400ms;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+#menu a:hover {
+  background-color: #58A0D1;
+  color: #ffffff;
+}
+#menu a:last-child {
+  border-bottom: 0;
+}
+#menu a.active {
+  color: #ffffff;
+  background-color: #2C74A4;
+}
+#menu .item-list {
+  margin-top: 10px;
+}
+
+#profile-bar {
+  position: fixed;
+  top: 25px;
+  padding-left: 300px;
+  padding-right: 25px;
+  width: 100%;
+  z-index: 100;
+  height: 40px;
+  line-height: 20px;
 }
 
 #notfound h1 {

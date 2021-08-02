@@ -1,6 +1,7 @@
 //Variables
 
 $primary: #2C74A4;
+$primary-hover: #58A0D1;
 $error: #E84C3D;
 $soft-gray: #ddd;
 $text-color: #515C7B;
@@ -18,6 +19,11 @@ $animation-duration: 400ms;
 a, a:hover, a:visited {
   color: $primary;
   text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover {
+  color: $primary-hover;
 }
 
 h1, h2, h3 {
@@ -46,6 +52,10 @@ h3 {
   font-size: 16px;
 }
 
+.text-right {
+  text-align: right;
+}
+
 .text-center {
   text-align: center;
 }
@@ -53,6 +63,10 @@ h3 {
 .box {
   @extend .border-radius;
   padding: $box-padding;
+}
+
+.box-background {
+  background: $box-background;
 }
 
 .box-small {
@@ -91,6 +105,13 @@ body {
   background-position: 100% 100%;
 }
 
+.toggle-box {
+  display: none;
+  &.active {
+    display: block;
+  }
+}
+
 form {
   padding: 10px 0;
   text-align: left;
@@ -126,8 +147,9 @@ form {
 
 }
 
-button {
+a.btn, button {
   display: inline-block;
+  cursor: pointer;
   font-weight: 400;
   background: $primary;
   box-shadow: none;
@@ -140,9 +162,31 @@ button {
     display: block;
     width: 100%;
   }
+  &.danger {
+    background: $error;
+  }
   &.default {
     background: $box-background;
     border: 1px solid $primary;
+    color: $primary;
+  }
+}
+
+.main-table{
+  .record {
+    display: flex;
+    align-items: center;
+  }
+
+  .record-value {
+    flex-grow: 1;
+    span {
+      font-size: 12px;
+      display: block;
+    }
+    &:last-child{
+      text-align: right;
+    }
   }
 }
 
@@ -151,6 +195,16 @@ button {
   display: none;
   &.animate__animated {
     display: block;
+  }
+}
+
+.main-layout {
+  padding-left: 300px;
+  padding-top: 100px;
+  padding-right: 25px;
+  z-index: 50;
+  h1 {
+    margin-bottom: 7px;
   }
 }
 
@@ -188,18 +242,47 @@ button {
   }
 }
 
-#loading {
+#menu {
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 25px;
+  left: 25px;
+  max-width: 250px;
   width: 100%;
-  height: 100%;
-  z-index: 300;
-  background: rgba(51, 51, 51, 0.6);
-  color: #fff;
-  &.completed {
-    display: none;
+  z-index: 110;
+  a {
+    display: block;
+    line-height: 40px;
+    border-bottom: 1px solid $primary;
+    transition: all $animation-duration;
+    padding-left: 5px;
+    padding-right: 5px;
+    &:hover {
+      background-color: $primary-hover;
+      color: $box-background;
+    }
+    &:last-child {
+      border-bottom: 0;
+    }
+    &.active {
+      color: $box-background;
+      background-color: $primary;
+    }
   }
+
+  .item-list {
+    margin-top: 10px;
+  }
+}
+
+#profile-bar {
+  position: fixed;
+  top: 25px;
+  padding-left: 300px;
+  padding-right: 25px;
+  width: 100%;
+  z-index: 100;
+  height: 40px;
+  line-height: 20px;
 }
 
 #notfound {
