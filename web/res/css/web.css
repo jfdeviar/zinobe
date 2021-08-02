@@ -211,6 +211,28 @@ a.btn.default, button.default {
   margin-right: 0;
 }
 
+#toolbar-container {
+  text-align: right;
+  position: relative;
+}
+#toolbar-container span#user-icon {
+  display: inline-block;
+  background: #2C74A4;
+  color: #ffffff;
+  font-weight: 700;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+#toolbar-container #user-menu {
+  position: absolute;
+  right: 0;
+  top: 45px;
+  max-width: 150px;
+}
+
 #menu {
   position: fixed;
   top: 25px;

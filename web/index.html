@@ -55,6 +55,7 @@
 
         $( document ).ready(function() {
             let currentPage = ""
+            let currentPath = ""
             let menuStatus = false
 
             $.ajaxSetup({
@@ -74,8 +75,8 @@
                     }
 
                     if (response.responseJSON.code === 401){
-                        //localStorage.clear()
-                        //window.location.hash = "/"
+                        localStorage.clear()
+                        window.location.hash = "/"
                     }
 
                     let Authorization = response.getResponseHeader('Authorization')
@@ -215,6 +216,7 @@
 
                 $( "#menu" ).load( "pages/menu.html", function() {
                     $("#menu").addClass("active animate__animated animate__zoomIn")
+                    $("#menu a[href='"+currentPath+"'], #menu a[href='/"+currentPath+"']").addClass("active")
                 });
 
                 $( "#profile-bar" ).load( "pages/toolbar.html", function() {
@@ -263,6 +265,8 @@
             }
 
             function processRoute(path){
+                currentPath = path;
+
                 let hash = path.substring(1);
                 hash = hash.split('?')[0]
                 let missing = false;

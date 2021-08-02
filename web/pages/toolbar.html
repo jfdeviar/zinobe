@@ -1,3 +1,35 @@
 <div id="toolbar-container" class="box-small box-background">
-    Toolbar
+    <span id="user-icon"></span>
+
+    <div id="user-menu" class="box box-background toggle-box">
+        <a id="logout">Salir</a>
+    </div>
+
 </div>
+
+
+<script type="text/javascript">
+    $( document ).ready(function() {
+
+        function authLoaded(response){
+            let first_name = response.data.first_name
+            if (!first_name){
+                first_name = "0"
+            }
+
+            $("#user-icon").text(first_name.charAt(0))
+        }
+
+        $("#logout").click(()=>{
+            localStorage.clear()
+            window.location.hash = "/"
+        })
+
+        $("#user-icon").click(()=>{
+            $("#user-menu").toggleClass("active")
+        })
+
+        CRUD.read('auth',authLoaded)
+
+    })
+</script>

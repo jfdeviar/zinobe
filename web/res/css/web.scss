@@ -242,6 +242,28 @@ a.btn, button {
   }
 }
 
+#toolbar-container {
+  text-align: right;
+  position: relative;
+  span#user-icon {
+    display: inline-block;
+    background: $primary;
+    color: $box-background;
+    font-weight: 700;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    cursor: pointer;
+  }
+  #user-menu {
+    position: absolute;
+    right: 0;
+    top: 45px;
+    max-width: 150px;
+  }
+}
+
 #menu {
   position: fixed;
   top: 25px;
