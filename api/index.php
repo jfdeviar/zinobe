@@ -1,10 +1,19 @@
 <?php
 header('Access-Control-Allow-Origin: http://deviafernando.com');
-header("Access-Control-Allow-Headers: Origin, Content-Type, Accept");
-header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
+header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method, Authorization");
+header("Access-Control-Allow-Methods: OPTIONS, GET, POST, PUT, DELETE");
+header("Access-Control-Expose-Headers: Content-Type, Authorization");
+header("Access-Control-Allow-Credentials: true");
+header("Allow: GET, POST, OPTIONS, PUT, DELETE");
+
+
+if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+    exit(0);
+}
 
 use \Modules\Api\Controller\ApiController;
 use \Core\Util;
+use \FastRoute\RouteCollector;
 
 require 'vendor/autoload.php';
 
@@ -18,23 +27,34 @@ try {
         '\Modules\Api\Boot\RegisterLog',
         '\Modules\User\Boot\CheckLogin',
     ];
+
     foreach ($boots as &$boot){
         $boot = new $boot();
         $boot->fire();
     }
-
-    $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) {
+    $dispatcher = FastRoute\simpleDispatcher(function (RouteCollector $r) {
         $r->addRoute('GET', '/', '\Modules\Api\Controller\ApiController.getStatus');
+        $r->addRoute('OPTIONS', '/', '\Modules\Api\Controller\ApiController.getStatus');
 
-        $r->addGroup('/auth', function (\FastRoute\RouteCollector $r) {
-            $r->addRoute('POST', '/', '\Modules\User\Controller\UserController.getLogin');
-            $r->addRoute('GET', '/', '\Modules\User\Controller\UserController.doLogin');
+        $r->addGroup('/auth', function (RouteCollector $r) {
+            $r->addRoute('GET', '', '\Modules\User\Controller\UserController.getLogin');
+            $r->addRoute('POST', '/', '\Modules\User\Controller\UserController.doLogin');
             $r->addRoute('POST', '/register', '\Modules\User\Controller\UserController.doRegister');
             $r->addRoute('POST', '/confirm', '\Modules\User\Controller\UserController.doConfirm');
         });
 
+        $r->addGroup('/records', function (RouteCollector $r) {
+            $r->addRoute('GET', '', '\Modules\User\Controller\RecordController.getItems');
+            $r->addRoute('GET', '/{slug}', '\Modules\User\Controller\RecordController.getItem');
+            $r->addRoute('POST', '', '\Modules\User\Controller\RecordController.doRegister');
+            $r->addRoute('PUT', '/{id}', '\Modules\User\Controller\RecordController.doUpdate');
+            $r->addRoute('DELETE', '/{id}', '\Modules\User\Controller\RecordController.doRemove');
 
-        $r->addRoute('GET', '/articles/{id:\d+}[/{title}]', 'get_article_handler');
+        });
+
+
+
+
     });
 
 
@@ -47,8 +67,8 @@ try {
         $uri = substr($uri, 0, $pos);
     }
     $uri = rawurldecode($uri);
-
     $routeInfo = $dispatcher->dispatch($httpMethod, $uri);
+
     switch ($routeInfo[0]) {
         case FastRoute\Dispatcher::NOT_FOUND:
             throw new Exception("Página no encontrada", 404);
@@ -58,11 +78,17 @@ try {
             throw new Exception("Método no disponible", 405);
             break;
         case FastRoute\Dispatcher::FOUND:
-            $vars = $routeInfo[2];
+            $vars = $routeInfo[2] ?? null;
             $handler = explode('.', $routeInfo[1]);
-
             $controller = new $handler[0]();
-            $response = $controller->{$handler[1]}();
+
+            if ($vars){
+                $response = $controller->{$handler[1]}($vars);
+            } else {
+                $response = $controller->{$handler[1]}();
+            }
+
+
             Util::$database->pdo->commit();
             break;
         default:

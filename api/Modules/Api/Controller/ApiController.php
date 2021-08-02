@@ -5,7 +5,6 @@ namespace Modules\Api\Controller;
 use Core\BaseController;
 use Exception;
 use Modules\User\Model\Token;
-use Modules\User\Model\User;
 
 final class ApiController extends BaseController
 {
@@ -24,7 +23,7 @@ final class ApiController extends BaseController
      */
     public static function getResponse(...$args): bool|string
     {
-        $data = ['data'=>[],'code'=>200,'message'=>[],'actions'=>[],'headers'=>[],'status'=>false];
+        $data = ['data'=>[],'code'=>200,'message'=>'','actions'=>[],'headers'=>[],'status'=>false];
 
         foreach ($args as $k=>$arg){
             if (in_array($k,array_keys($data))){

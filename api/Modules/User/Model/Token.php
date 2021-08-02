@@ -30,7 +30,7 @@ class Token extends BaseModel
         $payload['user'] = $user->filterApi();
         $payload['prk'] = Util::$config['keys']['private'];
 
-        $token = gmdate('U').'_'.JWT::encode($payload, Util::$config['keys']['public']);
+        $token = gmdate('U').'_'.JWT::encode($payload, Util::$config['keys']['public'],'HS256');
 
         $token = Token::create([
             'user_id' => $user->id,

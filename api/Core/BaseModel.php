@@ -12,7 +12,7 @@ class BaseModel
     protected array $api_private = []; //lo que retornamos en el api privado
     protected array $fill = ['slug'];// lo que insertamos en la base de datos
 
-    protected int $id=0;
+    public int $id=0;
     protected String $slug='';
     public static String $table = "";
     protected String $created_at;
@@ -91,7 +91,7 @@ class BaseModel
      */
     public function getApi(): array
     {
-        return User::$current?$this->api:array_merge($this->api,$this->api_private);
+        return User::$current?array_merge($this->api,$this->api_private):$this->api;
     }
 
     /**

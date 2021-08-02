@@ -2,7 +2,7 @@
 
 namespace Modules\Notification\Model;
 
-
+use Modules\Notification\Service\CellVoz;
 use Modules\User\Model\User;
 
 final class Notification

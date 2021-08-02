@@ -8,6 +8,7 @@ use Modules\Api\Controller\ApiController;
 class User extends BaseModel
 {
 
+    protected array $api_private = ['first_name','last_name'];
     protected array $fill = ['identification','phone','first_name','last_name','email','password'];
 
     protected int $identification = 0;
@@ -18,7 +19,7 @@ class User extends BaseModel
     public ?String $password = null;
 
     public static String $table = "users";
-    public static User $current;
+    public static ?User $current = null;
 
     public function generateSlug($properties){
         $this->slug = $properties['identification'];
