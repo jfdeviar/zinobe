@@ -79,5 +79,9 @@ El proyecto se estará montando el lunes 9 de agosto en el siguiente alojamiento
 
 deviafernando.com
 
+## Plan de trabajo
 
+El proyecto se esta trabajando con ASANA para el seguimiento en las tareas:
+
+https://app.asana.com/0/1200698424447279/board
 
