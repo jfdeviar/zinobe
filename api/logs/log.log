@@ -1150,3 +1150,359 @@ request: api.deviafernando.com /records params: array (
 request: api.deviafernando.com /auth params: array (
   'path' => 'auth',
 )
+request: api.deviafernando.com /statistics params: array (
+  'path' => 'statistics',
+)
+request: api.deviafernando.com /auth params: array (
+  'path' => 'auth',
+)
+request: api.deviafernando.com /statistics params: array (
+  'path' => 'statistics',
+)
+request: api.deviafernando.com /auth params: array (
+  'path' => 'auth',
+)
+request: api.deviafernando.com /auth params: array (
+  'path' => 'auth',
+)
+request: api.deviafernando.com /statistics params: array (
+  'path' => 'statistics',
+)
+request: api.deviafernando.com /auth params: array (
+  'path' => 'auth',
+)
+request: api.deviafernando.com /statistics params: array (
+  'path' => 'statistics',
+)
+request: api.deviafernando.com /statistics params: array (
+  'path' => 'statistics',
+)
+request: api.deviafernando.com /auth params: array (
+  'path' => 'auth',
+)
+request: api.deviafernando.com /statistics params: array (
+  'path' => 'statistics',
+)
+request: api.deviafernando.com /auth params: array (
+  'path' => 'auth',
+)
+request: api.deviafernando.com /auth params: array (
+  'path' => 'auth',
+)
+request: api.deviafernando.com /statistics params: array (
+  'path' => 'statistics',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'password' => 'devia5',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'password' => 'devia5',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'password' => 'devia5',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'password' => 'devia5',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'password' => 'devia5',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'password' => 'devia5',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241383',
+  'identification' => '111054050',
+  'password' => 'devia5',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '659987',
+  'identification' => '123123123',
+  'password' => '123',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '659987',
+  'identification' => '123123',
+  'password' => '123123',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'password' => 'devoa5',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '853696',
+  'password' => 'devoa5',
+)
+request: api.deviafernando.com /statistics params: array (
+  'path' => 'statistics',
+)
+request: api.deviafernando.com /auth params: array (
+  'path' => 'auth',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'password' => 'devia5',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '229131',
+  'password' => 'devia5',
+)
+request: api.deviafernando.com /auth params: array (
+  'path' => 'auth',
+)
+request: api.deviafernando.com /statistics params: array (
+  'path' => 'statistics',
+)
+request: api.deviafernando.com /auth/register params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'password' => 'devia5',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '823153',
+  'password' => 'devia5',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '823153',
+  'password' => 'devia5',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '823153',
+  'password' => 'devia5',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '823153',
+  'password' => 'devia5',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '823153',
+  'password' => 'devia5',
+)
+request: api.deviafernando.com /auth/confirm params: array (
+  'phone' => '3185241383',
+  'identification' => '1110534050',
+  'code' => '823153',
+  'password' => 'devia5',
+)
+request: api.deviafernando.com /statistics params: array (
+  'path' => 'statistics',
+)
+request: api.deviafernando.com /auth params: array (
+  'path' => 'auth',
+)
+request: api.deviafernando.com /records params: array (
+  'path' => 'records',
+)
+request: api.deviafernando.com /records params: array (
+  'identification' => '14297163',
+  'phone' => '3204644024',
+  'email' => '',
+  'first_name' => '',
+  'last_name' => '',
+)
+request: api.deviafernando.com /records params: array (
+  'identification' => '14297163',
+  'phone' => '3204644024',
+  'email' => '',
+  'first_name' => '',
+  'last_name' => '',
+)
+request: api.deviafernando.com /records params: array (
+  'identification' => '14297163',
+  'phone' => '3204644024',
+  'email' => '',
+  'first_name' => '',
+  'last_name' => '',
+)
+request: api.deviafernando.com /records params: array (
+  'path' => 'records',
+)
+request: api.deviafernando.com /records params: array (
+  'path' => 'records',
+)
+request: api.deviafernando.com /auth params: array (
+  'path' => 'auth',
+)
+request: api.deviafernando.com /records params: array (
+  'path' => 'records',
+)
+request: api.deviafernando.com /auth params: array (
+  'path' => 'auth',
+)
+request: api.deviafernando.com /statistics params: array (
+  'path' => 'statistics',
+)
+request: api.deviafernando.com /statistics params: array (
+  'path' => 'statistics',
+)
+request: api.deviafernando.com /auth params: array (
+  'path' => 'auth',
+)
+request: api.deviafernando.com /statistics params: array (
+  'path' => 'statistics',
+)
+request: api.deviafernando.com /auth params: array (
+  'path' => 'auth',
+)
+request: api.deviafernando.com /statistics params: array (
+  'path' => 'statistics',
+)
+request: api.deviafernando.com /auth params: array (
+  'path' => 'auth',
+)
+request: api.deviafernando.com /statistics params: array (
+  'path' => 'statistics',
+)
+request: api.deviafernando.com /auth params: array (
+  'path' => 'auth',
+)
+request: api.deviafernando.com /statistics params: array (
+  'path' => 'statistics',
+)
+request: api.deviafernando.com /auth params: array (
+  'path' => 'auth',
+)
+request: api.deviafernando.com /statistics params: array (
+  'path' => 'statistics',
+)
+request: api.deviafernando.com /auth params: array (
+  'path' => 'auth',
+)
+request: api.deviafernando.com /statistics params: array (
+  'path' => 'statistics',
+)
+request: api.deviafernando.com /auth params: array (
+  'path' => 'auth',
+)
+request: api.deviafernando.com /statistics params: array (
+  'path' => 'statistics',
+)
+request: api.deviafernando.com /auth params: array (
+  'path' => 'auth',
+)
+request: api.deviafernando.com /statistics params: array (
+  'path' => 'statistics',
+)
+request: api.deviafernando.com /auth params: array (
+  'path' => 'auth',
+)
+request: api.deviafernando.com /statistics params: array (
+  'path' => 'statistics',
+)
+request: api.deviafernando.com /auth params: array (
+  'path' => 'auth',
+)
+request: api.deviafernando.com /auth params: array (
+  'path' => 'auth',
+)
+request: api.deviafernando.com /statistics params: array (
+  'path' => 'statistics',
+)
+request: api.deviafernando.com /auth params: array (
+  'path' => 'auth',
+)
+request: api.deviafernando.com /statistics params: array (
+  'path' => 'statistics',
+)
+request: api.deviafernando.com /statistics params: array (
+  'path' => 'statistics',
+)
+request: api.deviafernando.com /auth params: array (
+  'path' => 'auth',
+)
+request: api.deviafernando.com /auth params: array (
+  'path' => 'auth',
+)
+request: api.deviafernando.com /statistics params: array (
+  'path' => 'statistics',
+)
+request: api.deviafernando.com /auth params: array (
+  'path' => 'auth',
+)
+request: api.deviafernando.com /statistics params: array (
+  'path' => 'statistics',
+)
+request: api.deviafernando.com /statistics params: array (
+  'path' => 'statistics',
+)
+request: api.deviafernando.com /auth params: array (
+  'path' => 'auth',
+)
+request: api.deviafernando.com /auth params: array (
+  'path' => 'auth',
+)
+request: api.deviafernando.com /statistics params: array (
+  'path' => 'statistics',
+)
+request: api.deviafernando.com /statistics params: array (
+  'path' => 'statistics',
+)
+request: api.deviafernando.com /auth params: array (
+  'path' => 'auth',
+)
+request: api.deviafernando.com /auth params: array (
+  'path' => 'auth',
+)
+request: api.deviafernando.com /statistics params: array (
+  'path' => 'statistics',
+)
+request: api.deviafernando.com /auth params: array (
+  'path' => 'auth',
+)
+request: api.deviafernando.com /statistics params: array (
+  'path' => 'statistics',
+)
+request: api.deviafernando.com /statistics params: array (
+  'path' => 'statistics',
+)
+request: api.deviafernando.com /auth params: array (
+  'path' => 'auth',
+)
+request: api.deviafernando.com /auth params: array (
+  'path' => 'auth',
+)
+request: api.deviafernando.com /statistics params: array (
+  'path' => 'statistics',
+)
+request: api.deviafernando.com /auth params: array (
+  'phone' => '3185241383',
+  'password' => 'devia5',
+)
+request: api.deviafernando.com /auth params: array (
+  'phone' => '3185241383',
+  'password' => 'devia5',
+)
+request: api.deviafernando.com /statistics params: array (
+  'path' => 'statistics',
+)
+request: api.deviafernando.com /auth params: array (
+  'path' => 'auth',
+)

@@ -177,3 +177,10 @@ Error: 401: Token de autorización invalido in D:\Desarrollo\fernando\zinobe\api
 Error: 401: Token de autorización invalido in D:\Desarrollo\fernando\zinobe\api\Modules\User\Boot\CheckLogin.php:47
 Error: 401: Token de autorización invalido in D:\Desarrollo\fernando\zinobe\api\Modules\User\Boot\CheckLogin.php:47
 Error: 500: El código ingresado no es valido in D:\Desarrollo\fernando\zinobe\api\Modules\User\Controller\UserController.php:100
+Error: 0: DateInterval::__construct(): Unknown or bad format (30D) in D:\Desarrollo\fernando\zinobe\api\Modules\Data\Controller\DataController.php:20
+Error: 0: DateInterval::__construct(): Unknown or bad format (30D) in D:\Desarrollo\fernando\zinobe\api\Modules\Data\Controller\DataController.php:20
+Error: 401: Token de autorización invalido in D:\Desarrollo\fernando\zinobe\api\Modules\User\Boot\CheckLogin.php:47
+Error: 401: Token de autorización invalido in D:\Desarrollo\fernando\zinobe\api\Modules\User\Boot\CheckLogin.php:47
+Error: 401: Token de autorización invalido in D:\Desarrollo\fernando\zinobe\api\Modules\User\Boot\CheckLogin.php:47
+Error: 401: Token de autorización invalido in D:\Desarrollo\fernando\zinobe\api\Modules\User\Boot\CheckLogin.php:47
+Error: 405: Método no disponible in D:\Desarrollo\fernando\zinobe\api\index.php:77

@@ -164,7 +164,6 @@ class BaseModel
         try {
             Util::$database->insert(static::$table, $data);
         } catch (\Exception $e){
-            var_dump($e);
             die;
         }
 

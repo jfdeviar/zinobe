@@ -34,12 +34,13 @@ try {
     }
     $dispatcher = FastRoute\simpleDispatcher(function (RouteCollector $r) {
         $r->addRoute('GET', '/', '\Modules\Api\Controller\ApiController.getStatus');
-        $r->addRoute('OPTIONS', '/', '\Modules\Api\Controller\ApiController.getStatus');
+        $r->addRoute('GET', '/statistics', '\Modules\Data\Controller\DataController.getCurrent');
 
         $r->addGroup('/auth', function (RouteCollector $r) {
             $r->addRoute('GET', '', '\Modules\User\Controller\UserController.getLogin');
-            $r->addRoute('POST', '/', '\Modules\User\Controller\UserController.doLogin');
+            $r->addRoute('POST', '', '\Modules\User\Controller\UserController.doLogin');
             $r->addRoute('POST', '/register', '\Modules\User\Controller\UserController.doRegister');
+            $r->addRoute('POST', '/recover', '\Modules\User\Controller\UserController.doRecover');
             $r->addRoute('POST', '/confirm', '\Modules\User\Controller\UserController.doConfirm');
         });
 
@@ -49,7 +50,6 @@ try {
             $r->addRoute('POST', '', '\Modules\User\Controller\RecordController.doRegister');
             $r->addRoute('PUT', '/{id}', '\Modules\User\Controller\RecordController.doUpdate');
             $r->addRoute('DELETE', '/{id}', '\Modules\User\Controller\RecordController.doRemove');
-
         });
 
 

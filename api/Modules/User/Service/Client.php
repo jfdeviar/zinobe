@@ -5,6 +5,7 @@ namespace Modules\User\Service;
 
 use Core\Util;
 use Modules\Api\Controller\ApiController;
+use Modules\Data\Model\Data;
 
 class Client
 {
@@ -23,6 +24,9 @@ class Client
     public static function fillData($identification,&$first_name,&$last_name){
         if (empty($first_name) || empty($last_name)){
             $data = Client::requestNames($identification);
+
+            Data::registerData('Consultado',1);
+
             if (is_array($data)){
                 if (isset($data['firstName']) && $data['firstName'] && empty($first_name)){
                     $first_name = $data['firstName'];
@@ -67,7 +71,7 @@ class Client
 
         curl_close($curl);
         $data = json_decode($response,true);
-        ApiController::registerLog('Response identification: '.var_export($data['data']),'misdatos');
+        ApiController::registerLog('Response identification: '.var_export($data['data'],true),'misdatos');
 
         return $data['data'];
 

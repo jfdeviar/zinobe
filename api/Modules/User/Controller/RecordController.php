@@ -4,6 +4,7 @@ namespace Modules\User\Controller;
 
 use Core\BaseController;
 use Modules\Api\Controller\ApiController;
+use Modules\Data\Model\Data;
 use Modules\Notification\Model\Notification;
 use Modules\User\Model\Record;
 use Modules\User\Model\Register;
@@ -58,8 +59,7 @@ class RecordController extends BaseController
     }
 
 
-    public function doRegister($params){
-        $id = $params['id'];
+    public function doRegister(){
         $identification = $this->params['identification'];
         $phone = $this->params['phone'] ?? '';
         $email = $this->params['email'] ?? '';
@@ -67,7 +67,7 @@ class RecordController extends BaseController
         $last_name = $this->params['last_name'] ?? '';
         $user = User::$current;
 
-        $record = Record::first(['id' => $id,'user_id'=>$user->id]);
+        $record = Record::first(['identification' => $identification,'user_id'=>$user->id]);
         if($record){
             throw new Exception('Ya hay un registro con esa identificación',500);
         }
@@ -82,6 +82,8 @@ class RecordController extends BaseController
             'last_name' => $last_name,
             'user_id' => $user->id
         ]);
+
+        Data::registerData('Registro',1);
         return ApiController::getResponse(data: $record->filterApi(),message: "Registro exitoso");
 
     }

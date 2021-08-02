@@ -20,9 +20,4 @@ class Register extends User
         parent::__construct($properties);
     }
 
-    public function generateCode(){
-        $digits = 6;
-        $this->code = rand(pow(10, $digits-1), pow(10, $digits)-1);;
-    }
-
 }
