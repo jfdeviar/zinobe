@@ -1,0 +1,21 @@
+<?php
+
+return [
+    'debug' => IS_DEBUG,
+    'error_reporting' => 0,
+    'database' => [
+        'host' => 'DATABASE_HOST',
+        'database' => 'DATABASE_NAME',
+        'username' => 'DATABASE_USERNAME',
+        'password' => 'DATABASE_PASSWORD'
+    ],
+    'administrator' => [
+        'email' => 'ADMIN_EMAIL',
+        'phone' => 'ADMIN_PHONE'
+    ],
+    'sms' => [
+        'api_key' => 'b0333a758b253d5608fdd0f1b8a596684a00bf23',
+        'account' => '00486623805',
+        'password' => 'pt100UNAL'
+    ]
+];

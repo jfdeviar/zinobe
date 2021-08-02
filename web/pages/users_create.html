@@ -1,0 +1,51 @@
+<div id="dashboard" class="main-layout">
+    <h1>Crear registro</h1> <a class="btn default" href="/#/users">Volver</a>
+    <div class="box box-background">
+        <form id="record-form">
+            <label for="identification">Identificación *</label>
+            <input name="identification" minlength="5" id="identification" placeholder="Identificación" required/>
+
+            <label for="phone">Teléfono</label>
+            <input name="phone" id="phone" placeholder="Teléfono" />
+
+            <label for="email">Correo</label>
+            <input type="email" name="email" id="email" placeholder="Correo" />
+
+            <label for="first_name">Nombre</label>
+            <input name="first_name" id="first_name" placeholder="Nombre" />
+
+            <label for="last_name">Apellido</label>
+            <input name="last_name" id="last_name" placeholder="Apellido" />
+
+            <div class="actions">
+                <button class="block" type="submit">Guardar</button>
+            </div>
+            <div class="actions">
+                <a href="/#/users">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+
+    function recordsLoaded(){
+        window.location.hash = "/users"
+    }
+
+    $( document ).ready(function() {
+
+        $("#record-form").submit(function(e) {
+            e.preventDefault();
+            CRUD.create('records', {
+                identification: $("#identification").val(),
+                phone: $("#phone").val(),
+                email: $("#email").val(),
+                first_name: $("#first_name").val(),
+                last_name: $("#last_name").val(),
+            },recordsLoaded)
+        });
+
+    })
+</script>

@@ -4,7 +4,8 @@
 namespace Core;
 
 
-class BaseBoot
+class BaseController
 {
     use ConstructParams;
+
 }

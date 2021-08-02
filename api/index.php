@@ -1,36 +1,61 @@
 <?php
 header('Access-Control-Allow-Origin: http://deviafernando.com');
-header("Access-Control-Allow-Headers: Origin, Content-Type, Accept");
-header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
+header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method, Authorization");
+header("Access-Control-Allow-Methods: OPTIONS, GET, POST, PUT, DELETE");
+header("Access-Control-Expose-Headers: Content-Type, Authorization");
+header("Access-Control-Allow-Credentials: true");
+header("Allow: GET, POST, OPTIONS, PUT, DELETE");
+
+
+if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+    exit(0);
+}
 
 use \Modules\Api\Controller\ApiController;
 use \Core\Util;
+use \FastRoute\RouteCollector;
 
 require 'vendor/autoload.php';
 
 
 try {
     set_error_handler('\Modules\Api\Controller\ApiController::getError');
-    Util::loadConfig();
 
     $boots = [
-        '\Modules\Api\Boot\RegisterLog'
+        '\Modules\Api\Boot\LoadConfig',
+        '\Modules\Api\Boot\ConnectDatabase',
+        '\Modules\Api\Boot\RegisterLog',
+        '\Modules\User\Boot\CheckLogin',
     ];
+
     foreach ($boots as &$boot){
         $boot = new $boot();
         $boot->fire();
     }
-
-    $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) {
+    $dispatcher = FastRoute\simpleDispatcher(function (RouteCollector $r) {
         $r->addRoute('GET', '/', '\Modules\Api\Controller\ApiController.getStatus');
+        $r->addRoute('GET', '/statistics', '\Modules\Data\Controller\DataController.getCurrent');
 
-        $r->addGroup('/admin', function (\FastRoute\RouteCollector $r) {
-            $r->addRoute('POST', '/auth', '\Modules\User\Controller\UserController.getLogin');
-            $r->addRoute('GET', '/auth', '\Modules\User\Controller\UserController.doLogin');
+        $r->addGroup('/auth', function (RouteCollector $r) {
+            $r->addRoute('GET', '', '\Modules\User\Controller\UserController.getLogin');
+            $r->addRoute('POST', '', '\Modules\User\Controller\UserController.doLogin');
+            $r->addRoute('POST', '/register', '\Modules\User\Controller\UserController.doRegister');
+            $r->addRoute('POST', '/recover', '\Modules\User\Controller\UserController.doRecover');
+            $r->addRoute('POST', '/reset', '\Modules\User\Controller\UserController.doReset');
+            $r->addRoute('POST', '/confirm', '\Modules\User\Controller\UserController.doConfirm');
+        });
+
+        $r->addGroup('/records', function (RouteCollector $r) {
+            $r->addRoute('GET', '', '\Modules\User\Controller\RecordController.getItems');
+            $r->addRoute('GET', '/{slug}', '\Modules\User\Controller\RecordController.getItem');
+            $r->addRoute('POST', '', '\Modules\User\Controller\RecordController.doRegister');
+            $r->addRoute('PUT', '/{id}', '\Modules\User\Controller\RecordController.doUpdate');
+            $r->addRoute('DELETE', '/{id}', '\Modules\User\Controller\RecordController.doRemove');
         });
 
 
-        $r->addRoute('GET', '/articles/{id:\d+}[/{title}]', 'get_article_handler');
+
+
     });
 
 
@@ -43,34 +68,41 @@ try {
         $uri = substr($uri, 0, $pos);
     }
     $uri = rawurldecode($uri);
-
     $routeInfo = $dispatcher->dispatch($httpMethod, $uri);
+
     switch ($routeInfo[0]) {
         case FastRoute\Dispatcher::NOT_FOUND:
-            throw new Exception("Not Found", 404);
+            throw new Exception("Página no encontrada", 404);
             break;
         case FastRoute\Dispatcher::METHOD_NOT_ALLOWED:
             $allowedMethods = $routeInfo[1];
-            throw new Exception("Method not allowed", 405);
+            throw new Exception("Método no disponible", 405);
             break;
         case FastRoute\Dispatcher::FOUND:
-
-            $vars = $routeInfo[2];
+            $vars = $routeInfo[2] ?? null;
             $handler = explode('.', $routeInfo[1]);
-
             $controller = new $handler[0]();
-            $response = $controller->{$handler[1]}();
+
+            if ($vars){
+                $response = $controller->{$handler[1]}($vars);
+            } else {
+                $response = $controller->{$handler[1]}();
+            }
+
+
+            Util::$database->pdo->commit();
             break;
         default:
-            throw new Exception('Unexpected value', 500);
+            throw new Exception('Petición invalida', 400);
     }
 
     if (!$response) {
-        throw new Exception('Error getting response');
+        throw new Exception('Error del servidor. Contacte al administrador.');
     }
 } catch (Exception $e){
+    Util::$database->pdo->rollback();
     ApiController::registerLog("Error: ".$e->getCode().": ".$e->getMessage()." in ".$e->getFile().':'.$e->getLine());
-    $response = ApiController::getResponse(code: $e->getCode(), message: "Error: ".$e->getCode().": ".$e->getMessage()." in ".$e->getFile().':'.$e->getLine());
+    $response = ApiController::getResponse(code: $e->getCode(), message: "Error: ".$e->getMessage().((Util::$config['debug'] ?? false) ? " in ".$e->getFile().':'.$e->getLine().' ('.$e->getCode().')' : ''));
 }
 
 header('Content-Type: application/json');

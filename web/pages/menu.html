@@ -1,0 +1,18 @@
+<div id="menu-container" class="box box-background">
+    Menu
+    <div class="item-list">
+        <a href="/#/dashboard">Dashboard</a>
+        <a href="/#/users">Registros</a>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    $( document ).ready(function() {
+        $("#menu a").click(function (){
+            $("#menu a").removeClass("active")
+            $(this).addClass("active")
+        })
+
+    })
+</script>

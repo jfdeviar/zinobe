@@ -1,0 +1,119 @@
+-- Tiempo de generación: 02-08-2021 a las 05:04:55
+-- Versión del servidor: 8.0.21
+-- Versión de PHP: 8.0.0
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Base de datos: `zinobe`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `records`
+--
+
+DROP TABLE IF EXISTS `records`;
+CREATE TABLE IF NOT EXISTS `records` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `user_id` int NOT NULL,
+  `identification` bigint NOT NULL,
+  `slug` varchar(45) COLLATE latin1_bin DEFAULT NULL,
+  `phone` bigint DEFAULT NULL,
+  `email` varchar(50) COLLATE latin1_bin DEFAULT NULL,
+  `first_name` varchar(50) COLLATE latin1_bin DEFAULT NULL,
+  `last_name` varchar(50) COLLATE latin1_bin DEFAULT NULL,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `registers`
+--
+
+DROP TABLE IF EXISTS `registers`;
+CREATE TABLE IF NOT EXISTS `registers` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `slug` varchar(100) CHARACTER SET latin1 COLLATE latin1_bin NOT NULL,
+  `identification` bigint NOT NULL,
+  `phone` bigint NOT NULL,
+  `password` varchar(255) CHARACTER SET latin1 COLLATE latin1_bin NOT NULL,
+  `code` varchar(6) CHARACTER SET latin1 COLLATE latin1_bin DEFAULT NULL,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `statistics`
+--
+
+DROP TABLE IF EXISTS `statistics`;
+CREATE TABLE IF NOT EXISTS `statistics` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `display_name` varchar(45) NOT NULL,
+  `format` varchar(20) NOT NULL,
+  `value` int NOT NULL,
+  `user_id` int NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `tokens`
+--
+
+DROP TABLE IF EXISTS `tokens`;
+CREATE TABLE IF NOT EXISTS `tokens` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `user_id` int NOT NULL,
+  `token` text COLLATE latin1_bin NOT NULL,
+  `due_date` datetime NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `slug` varchar(100) COLLATE latin1_bin NOT NULL,
+  `identification` bigint NOT NULL,
+  `phone` bigint NOT NULL,
+  `password` varchar(255) COLLATE latin1_bin NOT NULL,
+  `first_name` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+  `last_name` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+  `email` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+  `code` varchar(10) COLLATE latin1_bin DEFAULT NULL,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

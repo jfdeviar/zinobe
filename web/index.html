@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Fernando Devia">
+    <meta name="description" content="Prueba Zinobe" />
+
+    <title>Prueba de Fernando Devia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="res/css/web.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="menu" class="toggle-box"></div>
+    <div id="profile-bar" class="toggle-box"></div>
+    <div id="app"></div>
+    <div id="loading-bar"></div>
+    <div id="notifications"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="text/javascript">
+        const BASE_URL = "//api.deviafernando.com/"
+        const CRUD = {
+            read:(url)=>{},
+            create:(url,data,callback)=>{},
+            update:(url,data,callback)=>{},
+            delete:(url)=>{},
+            k: {
+                prk: 'hTWG5TilgoiVdjfctkDW',
+                puk: 'YQF06YTOK2qOJrHENpyN'
+            }
+        };
+
+        const STORAGE = {
+            retrieveLocal: (key) => {
+                return JSON.parse(localStorage.getItem(key)) || null
+            },
+            storeLocal: (key,item) => {
+                localStorage.setItem(key,JSON.stringify(item))
+                return item
+            }
+        }
+
+        const NOTIFY = {
+            generate: (notification,title,time)=>{},
+            index: 0
+        }
+
+        $( document ).ready(function() {
+            let currentPage = ""
+            let currentPath = ""
+            let menuStatus = false
+
+            $.ajaxSetup({
+                beforeSend: function(xhr) {
+                    if (STORAGE.retrieveLocal('Authorization')){
+                        xhr.setRequestHeader("Authorization", STORAGE.retrieveLocal('Authorization'));
+                    }
+
+                    $("#loading-bar").removeClass('completed')
+                },
+                complete: function (response){
+
+                    $("#loading-bar").addClass('completed')
+                    if(!response.responseJSON) {
+                        return
+                    }
+
+                    let Authorization = response.getResponseHeader('Authorization')
+                    if(Authorization){
+                        STORAGE.storeLocal('Authorization',Authorization)
+                    }
+
+                    if (response.responseJSON.code === 401){
+                        localStorage.clear()
+                        window.location.hash = "/"
+                    }
+
+                    if (response.responseJSON && response.responseJSON.message){
+                        NOTIFY.generate(response.responseJSON.message,response.responseJSON.status?'primary':'error')
+                    }
+
+                }
+            });
+
+
+            NOTIFY.generate = (notification,type,title,time) => {
+                if(!time){
+                    time = 3200
+                }
+                if(!title){
+                    title = "Atención"
+                }
+                if(!type){
+                    type = "primary" //primary,error
+                }
+
+                $("#notifications").append('<div id="notification_'+NOTIFY.index+'" class="notification animate__animated animate__fadeInUp notification_'+type+'"><h3><i class="fas fa-exclamation-triangle"></i>'+title+'</h3><p>'+notification+'</p></div>')
+
+                const index = NOTIFY.index;
+                setTimeout(() => {
+                    const element = $('#notification_'+index)
+                    element.removeClass("animate__fadeInUp")
+                    element.addClass("animate__fadeOutDown")
+                    setTimeout(()=>{
+                        element.remove()
+                    },500)
+                }, time);
+
+                NOTIFY.index++;
+            }
+
+            CRUD.create = (url,data,callback) => {
+                $.ajax({
+                    type: "POST",
+                    url: BASE_URL+url,
+                    data: data,
+                    success: (response)=>{
+                        if (response.status===true){
+                            callback(response)
+                        } else {
+                            NOTIFY.generate(response.message,'error')
+                        }
+                    },
+                    dataType: "json"
+                });
+            }
+
+            CRUD.update = (url,data,callback) => {
+
+                $.ajax({
+                    type: "PUT",
+                    url: BASE_URL+url,
+                    data: data,
+                    success: (response)=>{
+                        if (response.status===true){
+                            callback(response)
+                        } else {
+                            NOTIFY.generate(response.message,'error')
+                        }
+                    },
+                    dataType: "json"
+                });
+            }
+
+            CRUD.delete = (url,callback) => {
+                $.ajax({
+                    type: "DELETE",
+                    url: BASE_URL+url,
+                    success: (response)=>{
+                        if (response.status===true){
+                            callback(response)
+                        } else {
+                            NOTIFY.generate(response.message,'error')
+                        }
+                    },
+                    dataType: "json"
+                });
+            }
+
+            CRUD.read = (url,callback) => {
+                $.ajax({
+                    type: "GET",
+                    url: BASE_URL+url,
+                    success: (response)=>{
+                        if (response.status===true){
+                            callback(response)
+                        } else {
+                            NOTIFY.generate(response.message,'error')
+                        }
+                    },
+                    dataType: "json"
+                });
+            }
+
+
+            function disableMenu(){
+                if (!menuStatus){
+                    return;
+                }
+
+
+                const main_menu = $("#menu");
+                main_menu.removeClass("animate__zoomIn")
+                main_menu.addClass("animate__fadeOutLeft")
+
+                const profile_menu = $("#profile-bar")
+                profile_menu.removeClass("animate__zoomIn")
+                profile_menu.addClass("animate__fadeOutUp")
+
+                menuStatus = false
+
+                setTimeout(() => {
+                    main_menu.html("")
+                    main_menu.removeClass("active animate__fadeOutLeft")
+
+                    profile_menu.html("")
+                    profile_menu.removeClass("active animate__fadeOutUp")
+                }, 500);
+
+            }
+            function enableMenu(){
+
+                if (menuStatus){
+                    return;
+                }
+
+                $( "#menu" ).load( "pages/menu.html", function() {
+                    $("#menu").addClass("active animate__animated animate__zoomIn")
+                    $("#menu a[href='"+currentPath+"'], #menu a[href='/"+currentPath+"']").addClass("active")
+                });
+
+                $( "#profile-bar" ).load( "pages/toolbar.html", function() {
+                    $("#profile-bar").addClass("active animate__animated animate__zoomIn")
+                });
+
+                menuStatus = true
+            }
+
+
+
+            function isLogged(){
+                const Authorization = STORAGE.retrieveLocal('Authorization');
+                return !!Authorization;
+            }
+
+            function navigate(path){
+                window.location.hash = path;
+            }
+
+            function loadPage(name){
+                if (currentPage===name){
+                    return;
+                }
+                const pageId = 'app_'+name;
+                const app = $( "#app" );
+                const currentContents = $( "#app .app-content-wrapper" )
+
+                app.append('<div class="app-content-wrapper" id="'+pageId+'"></div>')
+                $( "#app #"+pageId ).load( "pages/"+name+".html", function() {
+                    currentContents.addClass('animate__animated animate__fadeOutUp')
+
+                    if (currentContents.length>0){
+                        setTimeout(() => {
+                            currentContents.remove()
+                            $(this).addClass('animate__animated animate__zoomIn')
+                        }, 400);
+
+
+                    } else {
+                        $(this).addClass('animate__animated animate__zoomIn')
+                    }
+
+
+                });
+            }
+
+            function processRoute(path){
+                currentPath = path;
+
+                let hash = path.substring(1);
+                hash = hash.split('?')[0]
+                let missing = false;
+                const logged = isLogged()
+                switch (hash) {
+                    case "/":
+                        let redirect = "/login"
+                        if (logged){
+                            let redirect = "/dashboard"
+                        }
+                        navigate(redirect)
+                        break
+                    case "/login":
+                        if (logged){
+                            navigate("/dashboard")
+                            break
+                        }
+                        loadPage("login")
+                        break
+                    case "/register":
+                        if (logged){
+                            navigate("/dashboard")
+                            break
+                        }
+                        loadPage("register")
+                        break
+                    case "/recover":
+                        if (logged){
+                            navigate("/dashboard")
+                            break
+                        }
+                        loadPage("recover")
+                        break
+                    case "/dashboard":
+                        if (!logged){
+                            navigate("/login")
+                            break
+                        }
+                        loadPage("dashboard")
+                        break
+                    case "/users":
+                        if (!logged){
+                            navigate("/login")
+                            break
+                        }
+                        loadPage("users")
+                        break
+                    case "/users/create":
+                        if (!logged){
+                            navigate("/login")
+                            break
+                        }
+                        loadPage("users_create")
+                        break
+                    case "/users/edit":
+                        if (!logged){
+                            navigate("/login")
+                            break
+                        }
+                        loadPage("users_edit")
+                        break
+                    default:
+                        missing = true
+                        loadPage("404")
+                        break
+                }
+
+                if (logged && !missing){
+                    enableMenu()
+                } else {
+                    disableMenu()
+                }
+
+            }
+
+            $(window).keydown(function(event){
+                if(event.keyCode === 13) {
+                    event.preventDefault();
+                    return false;
+                }
+            });
+
+            $(window).on('hashchange', function() {
+                processRoute(window.location.hash || "#/")
+            });
+
+            function boot(){
+                processRoute(window.location.hash || "#/")
+                $("#loading-bar").addClass('completed')
+            }
+
+            boot();
+
+
+        });
+    </script>
+
+</body>
+</html>

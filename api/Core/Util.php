@@ -4,15 +4,11 @@
 namespace Core;
 
 
+use Medoo\Medoo;
+
 class Util
 {
-    public static array $params;
+    public static array $config;
+    public static Medoo $database;
 
-    public static function loadConfig()
-    {
-        $config = require 'config.php';
-        self::$params = $config;
-        error_reporting($config['error_reporting']);
-
-    }
 }

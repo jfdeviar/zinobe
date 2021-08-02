@@ -1,0 +1,104 @@
+<div class="full-screen" id="registerPage">
+    <div class="main-content text-center">
+        <div class="bar-wrapper box-small">
+            <a href="/#/login">Ingresar</a>
+            <a href="/#/register" class="active">Registrarse</a>
+        </div>
+        <div class="content-wrapper box">
+            <div class="form-step step1 active toggle-box">
+                <h1>Registrarse</h1>
+                <form id="register-form">
+                    <label for="phone">Teléfono</label>
+                    <input name="phone" id="phone" placeholder="Teléfono" required/>
+                    <label for="identification">Identificación</label>
+                    <input name="identification" minlength="5" id="identification" placeholder="Identificación" required/>
+                    <label for="password">Contraseña</label>
+                    <input minlength="5" name="password" id="password" type="password" placeholder="Contraseña" required />
+                    <div class="actions">
+                        <button class="block" type="submit">Registrarme</button>
+                    </div>
+                    <div class="actions">
+                        <a href="/#/recover">Recuperar contraseña</a>
+                    </div>
+                </form>
+            </div>
+            <div class="form-step step2 toggle-box">
+                <form id="confirm-form">
+                    <label for="code">Código de confirmación <span class="sent_number"></span></label>
+                    <input name="code" id="code" placeholder="Código" required/>
+                    <div class="actions">
+                        <button class="block" type="submit">Confirmar</button>
+                    </div>
+                    <div class="actions">
+                        <a class="reset-register">Volver</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $( document ).ready(function() {
+        let step = 1;
+
+        function changeStep(){
+            $(".form-step").removeClass('active')
+            $(".form-step.step"+step).addClass('active')
+        }
+
+        function completedRegister(){
+            window.location.hash = "/dashboard"
+        }
+
+        function confirmRegister(response){
+            console.log(response)
+            $("sent_number").text('+57'+$("#phone").val())
+            step = 2
+            changeStep()
+        }
+
+        function resetRegister(){
+            step = 1
+            changeStep()
+        }
+
+        function hasNumber(myString) {
+            return /\d/.test(myString);
+        }
+
+        $("#confirm-form").submit(function(e){
+            e.preventDefault();
+
+            CRUD.create('auth/confirm',{
+                phone: $("#phone").val(),
+                identification: $("#identification").val(),
+                code: $("#code").val(),
+                password: $("#password").val()
+            },completedRegister)
+        })
+
+        $("#register-form").submit(function(e){
+            e.preventDefault();
+
+            if ($("#password").val().length<6) {
+                NOTIFY.generate('La contraseña debe tener al menos 6 carácteres','error')
+                return;
+            }
+
+            if (!hasNumber($("#password").val())){
+                NOTIFY.generate('La contraseña debe tener al menos un digito','error')
+                return;
+            }
+
+            CRUD.create('auth/register',{
+                phone: $("#phone").val(),
+                identification: $("#identification").val(),
+                password: $("#password").val(),
+            },confirmRegister)
+        });
+
+        $(".reset-register").click(()=>{
+            resetRegister()
+        })
+    })
+</script>

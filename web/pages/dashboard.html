@@ -1,0 +1,77 @@
+<div id="dashboard" class="main-layout">
+    <h1>Dashboard</h1>
+    <div class="box box-background" id="dashboard-content">
+        <canvas id="statistics-chart" style="width: 400px; height: 400px;" width="400" height="400"></canvas>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+
+    $( document ).ready(function() {
+
+        function drawDashboard(response){
+            const content = $("#dashboard-content")
+            if (response.data.length===0){
+                content.html("<div class='text-center'><h3>No hay datos</h3></div>")
+                return;
+            }
+            let ctx = $('#statistics-chart');
+
+            let labels = [];
+            let stored = [];
+            let request = [];
+            response.data.forEach((record)=>{
+                labels.push(record.format)
+                stored.push(record.Registro)
+                request.push(record.Consultado)
+            })
+
+            let mainChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Consultas exitosas',
+                        data: request,
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                        ],
+                        borderWidth: 1
+                    },{
+                        label: 'Registros',
+                        data: request,
+                        backgroundColor: [
+                            'rgba(54, 162, 235, 0.2)',
+                        ],
+                        borderColor: [
+                            'rgba(54, 162, 235, 1)',
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    width: 500,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+
+
+
+
+        }
+
+        CRUD.read('statistics',drawDashboard)
+
+
+    })
+</script>
+

@@ -1,0 +1,86 @@
+<div id="dashboard" class="main-layout">
+    <h1>Editar registro</h1> <a class="btn default" href="/#/users">Volver</a> <a id="delete-record" class="btn danger" href="/#/users">Eliminar</a>
+    <div class="box box-background">
+        <form id="update-record-form">
+            <label for="identification">Identificación (Solo lectura)</label>
+            <input name="identification" minlength="5" id="identification" placeholder="Identificación" disabled/>
+
+            <label for="phone">Teléfono</label>
+            <input name="phone" id="phone" placeholder="Teléfono" />
+
+            <label for="email">Correo</label>
+            <input type="email" name="email" id="email" placeholder="Correo" />
+
+            <label for="first_name">Nombre</label>
+            <input name="first_name" id="first_name" placeholder="Nombre" />
+
+            <label for="last_name">Apellido</label>
+            <input name="last_name" id="last_name" placeholder="Apellido" />
+
+            <div class="actions">
+                <button class="block" type="submit">Guardar</button>
+            </div>
+            <div class="actions">
+                <a href="/#/users">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+
+    function recordUpdated(){
+        window.location.hash = "/users"
+    }
+
+    function findGetParameter(parameterName) {
+        const hash = window.location.hash.split('?')
+        let value = null;
+        let variables = hash[1].split('&')
+        variables.forEach((val)=>{
+            if(value!=null){
+                return
+            }
+
+            const values = val.split('=')
+
+            if (values[0]===parameterName){
+                value = values[1];
+            }
+        })
+
+        return value
+    }
+
+    $( document ).ready(function() {
+        const id = findGetParameter("id")
+        let itemId = null;
+
+        function recordLoaded(response){
+            itemId = response.data.id
+            $("#identification").val(response.data.identification)
+            $("#phone").val(response.data.phone)
+            $("#email").val(response.data.email)
+            $("#first_name").val(response.data.first_name)
+            $("#last_name").val(response.data.last_name)
+        }
+
+        CRUD.read('records/'+id,recordLoaded)
+
+        $("#delete-record").click(()=>{
+            CRUD.delete('records/'+itemId,recordUpdated)
+        })
+
+        $("#update-record-form").submit(function(e) {
+            e.preventDefault();
+            CRUD.update('records/'+itemId, {
+                phone: $("#phone").val(),
+                email: $("#email").val(),
+                first_name: $("#first_name").val(),
+                last_name: $("#last_name").val(),
+            },recordUpdated)
+        });
+
+    })
+</script>

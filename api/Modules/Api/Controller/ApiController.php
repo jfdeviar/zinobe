@@ -2,9 +2,11 @@
 
 namespace Modules\Api\Controller;
 
+use Core\BaseController;
 use Exception;
+use Modules\User\Model\Token;
 
-final class ApiController
+final class ApiController extends BaseController
 {
 
     /**
@@ -19,8 +21,9 @@ final class ApiController
      * @param mixed ...$args    data, code, message, actions, headers
      * @return false|string
      */
-    public static function getResponse(...$args){
-        $data = ['data'=>[],'code'=>200,'message'=>[],'actions'=>[],'headers'=>[],'status'=>false];
+    public static function getResponse(...$args): bool|string
+    {
+        $data = ['data'=>[],'code'=>200,'message'=>'','actions'=>[],'headers'=>[],'status'=>false];
 
         foreach ($args as $k=>$arg){
             if (in_array($k,array_keys($data))){
@@ -31,6 +34,17 @@ final class ApiController
         if (in_array($data['code'],["200","201"])){
             $data['status'] = true;
         }
+
+
+        $token = Token::$current;
+        if (Token::$current){
+            $data['headers']['Authorization'] = $token->token;
+        }
+
+        foreach($data['headers'] as $k=>$header){
+            header($k.": ".$header);
+        }
+        unset($data['headers']);
 
         http_response_code($data['code']);
         return json_encode($data);
