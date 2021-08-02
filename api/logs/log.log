@@ -1506,3 +1506,36 @@ request: api.deviafernando.com /statistics params: array (
 request: api.deviafernando.com /auth params: array (
   'path' => 'auth',
 )
+request: api.deviafernando.com /auth/recover params: array (
+  'phone' => '3185241383',
+)
+request: api.deviafernando.com /auth/recover params: array (
+  'phone' => '3185241383',
+)
+request: api.deviafernando.com /auth/recover params: array (
+  'phone' => '3185241383',
+)
+request: api.deviafernando.com /auth/recover params: array (
+  'phone' => '3185241383',
+)
+request: api.deviafernando.com /auth/reset params: array (
+  'code' => '702483',
+  'phone' => '3185241383',
+  'password' => 'devia5',
+)
+request: api.deviafernando.com /auth/reset params: array (
+  'code' => '702483',
+  'phone' => '3185241383',
+  'password' => 'devia5',
+)
+request: api.deviafernando.com /auth/reset params: array (
+  'code' => '702483',
+  'phone' => '3185241383',
+  'password' => 'devia5',
+)
+request: api.deviafernando.com /auth params: array (
+  'path' => 'auth',
+)
+request: api.deviafernando.com /statistics params: array (
+  'path' => 'statistics',
+)

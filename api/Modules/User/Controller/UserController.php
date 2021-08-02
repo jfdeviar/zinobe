@@ -84,8 +84,8 @@ class UserController extends BaseController
         $user->generateCode();
         $user->save();
 
-        Notification::sendNotification($user,'Para reiniciar su contraseña, por favor ingrese el siguiente código: '.$user->code);
-        return ApiController::getResponse(message: "Se ha confirmado su cuenta");
+        //Notification::sendNotification($user,'Para reiniciar su contraseña, por favor ingrese el siguiente código: '.$user->code);
+        return ApiController::getResponse(message: "Se ha enviado un sms a ".$user->phone);
     }
 
     /**
@@ -107,7 +107,7 @@ class UserController extends BaseController
             throw new Exception("El código es incorrecto",500);
         };
 
-        $user->password = $password;
+        $user->setPassword($password);
         $user->code = null;
         $user->save();
 

@@ -9,7 +9,7 @@ class User extends BaseModel
 {
 
     protected array $api_private = ['first_name','last_name'];
-    protected array $fill = ['identification','phone','first_name','last_name','email','password'];
+    protected array $fill = ['identification','phone','first_name','last_name','email','password','code'];
 
     protected int $identification = 0;
     public int $phone = 0;

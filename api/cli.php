@@ -54,7 +54,6 @@ class CLI extends SCLI
                 $this->success('Setup command done');
                 break;
             case 'migrate':
-                //TODO generate database.base from sql
                 $content = file_get_contents('generator/database.base');
                 Util::$database->query($content);
                 $this->success('Migration runned');
