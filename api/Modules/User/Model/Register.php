@@ -13,7 +13,6 @@ class Register extends User
 
     public function __construct(array $properties = [])
     {
-        //Todo create validation on create properties
         if (!isset($properties['code'])){
             $this->generateCode();
         }

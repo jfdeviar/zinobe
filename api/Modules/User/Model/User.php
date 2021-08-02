@@ -22,6 +22,19 @@ class User extends BaseModel
     public static String $table = "users";
     public static ?User $current = null;
 
+    public function __construct(array $properties = [])
+    {
+        if (isset($properties['password'])){
+            if (!preg_match('~[0-9]+~', $properties['password'])) {
+                throw new \Exception("La contraseña debe tener al menos un número");
+            }
+            if (strlen($properties['password'])<6){
+                throw new \Exception("La contraseña debe tener al menos 6 carácteres");
+            }
+        }
+        parent::__construct($properties);
+    }
+
     public function generateCode(){
         $digits = 6;
         $this->code = rand(pow(10, $digits-1), pow(10, $digits)-1);

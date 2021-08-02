@@ -20,7 +20,7 @@
                     <label for="phone">Código de confirmación <span class="sent_number"></span></label>
                     <input name="code" id="code" placeholder="Código" required/>
                     <label for="password">Nueva contraseña</label>
-                    <input name="password" id="password" type="password" placeholder="Contraseña" required/>
+                    <input minlength="6" name="password" id="password" type="password" placeholder="Contraseña" required/>
                     <div class="actions">
                         <button class="block" type="submit">Confirmar</button>
                     </div>
@@ -65,8 +65,22 @@
             },completedRecover)
         });
 
+        function hasNumber(myString) {
+            return /\d/.test(myString);
+        }
+
         $("#reset-form").submit(function(e){
             e.preventDefault();
+
+            if ($("#password").val().length<6) {
+                NOTIFY.generate('La contraseña debe tener al menos 6 carácteres','error')
+                return;
+            }
+
+            if (!hasNumber($("#password").val())){
+                NOTIFY.generate('La contraseña debe tener al menos un digito','error')
+                return;
+            }
 
             CRUD.create('auth/reset',{
                 code: $("#code").val(),
