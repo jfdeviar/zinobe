@@ -17,12 +17,13 @@
                     .indexOf(m[3].toUpperCase()) >= 0;
             };
             jQuery.expr[':'].cinotcontains = function(a, i, m) {
-                return jQuery(a).text().toUpperCase().indexOf(m[3].toUpperCase()) == -1;
+                return jQuery(a).text().toUpperCase().indexOf(m[3].toUpperCase()) === -1;
             };
 
             $("#user-table").html("")
             if (response.data.length===0){
                 $("#user-table").html("<div class='text-center'><h3>No hay registros</h3></div>")
+                return;
             }
 
 

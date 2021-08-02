@@ -60,9 +60,15 @@ h3 {
   text-align: center;
 }
 
+.box-shadow {
+  box-shadow: 0 5px 20px 0 rgba(45,45,45,.1)
+}
+
 .box {
   @extend .border-radius;
+  @extend .box-shadow;
   padding: $box-padding;
+
 }
 
 .box-background {
@@ -70,7 +76,7 @@ h3 {
 }
 
 .box-small {
-  @extend .border-radius;
+  @extend .box;
   padding: $box-small-padding;
 }
 
@@ -172,10 +178,26 @@ a.btn, button {
   }
 }
 
+#dashboard-content {
+  text-align: center;
+}
+
+canvas {
+  margin: 0 auto;
+  min-width: 400px;
+  min-height: 400px;
+}
+
 .main-table{
   .record {
     display: flex;
     align-items: center;
+    margin-bottom: 3px;
+    padding-bottom: 3px;
+    border-bottom: 1px solid #eee;
+    &:last-child {
+      border-bottom: 0;
+    }
   }
 
   .record-value {

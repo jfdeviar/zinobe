@@ -25,6 +25,7 @@
     <div id="notifications"></div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script type="text/javascript">
         const BASE_URL = "//api.deviafernando.com/"
         const CRUD = {
@@ -69,14 +70,8 @@
                 complete: function (response){
 
                     $("#loading-bar").addClass('completed')
-
-                    if(!response.responseJSON){
-                        return;
-                    }
-
-                    if (response.responseJSON.code === 401){
-                        localStorage.clear()
-                        window.location.hash = "/"
+                    if(!response.responseJSON) {
+                        return
                     }
 
                     let Authorization = response.getResponseHeader('Authorization')
@@ -84,6 +79,10 @@
                         STORAGE.storeLocal('Authorization',Authorization)
                     }
 
+                    if (response.responseJSON.code === 401){
+                        localStorage.clear()
+                        window.location.hash = "/"
+                    }
 
                     if (response.responseJSON && response.responseJSON.message){
                         NOTIFY.generate(response.responseJSON.message,response.responseJSON.status?'primary':'error')

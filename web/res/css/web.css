@@ -42,7 +42,11 @@ h3 {
   text-align: center;
 }
 
-.box {
+.box-shadow, .box, .box-small {
+  box-shadow: 0 5px 20px 0 rgba(45, 45, 45, 0.1);
+}
+
+.box, .box-small {
   padding: 22px;
 }
 
@@ -146,9 +150,25 @@ a.btn.default, button.default {
   color: #2C74A4;
 }
 
+#dashboard-content {
+  text-align: center;
+}
+
+canvas {
+  margin: 0 auto;
+  min-width: 400px;
+  min-height: 400px;
+}
+
 .main-table .record {
   display: flex;
   align-items: center;
+  margin-bottom: 3px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid #eee;
+}
+.main-table .record:last-child {
+  border-bottom: 0;
 }
 .main-table .record-value {
   flex-grow: 1;
