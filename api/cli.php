@@ -1,5 +1,7 @@
 <?php
 require 'vendor/autoload.php';
+
+use Medoo\Medoo;
 use splitbrain\phpcli\CLI as SCLI;
 use splitbrain\phpcli\Options;
 use \Modules\Notification\Model\Notification;
@@ -54,6 +56,16 @@ class CLI extends SCLI
                 $this->success('Setup command done');
                 break;
             case 'migrate':
+                $config = Util::$config['database'];
+                Util::$database = new Medoo([
+                    'type' => 'mysql',
+                    'host' => $config['host'],
+                    'database' => $config['database'],
+                    'username' => $config['username'],
+                    'password' => $config['password']
+                ]);
+
+
                 $content = file_get_contents('generator/database.base');
                 Util::$database->query($content);
                 $this->success('Migration runned');
